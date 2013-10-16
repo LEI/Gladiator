@@ -4,7 +4,7 @@ using Gladiator.Equipments;
 
 namespace Gladiator
 {
-	public class GladiatorFighter // A renommer 'Champion' / 'Hero' / 'Fighter' ?
+	public class Champion
 	{
 		private string _name;
 		public string Name
@@ -13,11 +13,11 @@ namespace Gladiator
 			set { this._name = value; }
 		}
 
-		private List<Equipment> _listEquip = new List<Equipment> ();
-		public List<Equipment> ListEquip
+		private List<Equipment> _gear = new List<Equipment>();
+		public List<Equipment> Gear
 		{
-			get { return this._listEquip; }
-			set { this._listEquip = value; }
+			get { return this._gear; }
+			set { this._gear = value; }
 		}
 
 		public void attack()

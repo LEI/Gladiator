@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Gladiator
 {
@@ -32,7 +33,14 @@ namespace Gladiator
 			set { this._addDate = DateTime.Now; }
 		}
 
-		public Player (string p_name, string p_firstname, string p_alias)
+		private List<Team> _teamList = new List<Team>();
+		public List<Team> TeamList
+		{
+			get { return this._teamList; }
+			set { this._teamList = value; }
+		}
+
+		public Player(string p_name, string p_firstname, string p_alias)
 		{
 			this.Name = p_name;
 			this.Firstname = p_firstname;
@@ -40,19 +48,26 @@ namespace Gladiator
 			this.AddDate = DateTime.Now;
 		}
 
-		public string SePresenter()
+		public string getFullName()
 		{
-			return("Je m'appel " + this.Name+ " " +this.Firstname+ ", mon pseudo est : " + this.Alias + ", et je suis inscrit depuis le " + this.AddDate.ToString()+".");
+			string fullName = this.Firstname + " '" + this.Alias + "' " + this.Name;
+			//this.FullName = fullName;
+			return fullName;
 		}
 
-		public void DeleteTeam()
+		public string AddTeam(Team p_team)
 		{
-
+			if (this.TeamList.Count < 6) {
+				this.TeamList.Add(p_team);
+				return p_team.Name + " added";
+			} else {
+				return p_team.Name + " not added, 5 teams maximum";
+			}
 		}
 
-		public void AddTeam()
+		public void DeleteTeam(Team p_team)
 		{
-
+			this.TeamList.Remove(p_team);
 		}
 
 	}

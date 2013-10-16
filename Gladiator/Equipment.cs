@@ -1,8 +1,8 @@
 using System;
 
-namespace Gladiator.Equipments
+namespace Gladiator
 {
-	public class Equipment
+	public abstract class Equipment
 	{
 		protected string _name;
 		public string Name

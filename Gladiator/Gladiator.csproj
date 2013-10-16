@@ -41,7 +41,6 @@
     <Compile Include="Duel.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Team.cs" />
-    <Compile Include="Gladiator.cs" />
     <Compile Include="Equipment.cs" />
     <Compile Include="Interfaces\IStats.cs" />
     <Compile Include="Interfaces\IDefense.cs" />
@@ -54,6 +53,8 @@
     <Compile Include="Equipments\Spear.cs" />
     <Compile Include="Equipments\Trident.cs" />
     <Compile Include="Equipments\Net.cs" />
+    <Compile Include="GladiatorFighter.cs" />
+    <Compile Include="Champion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -4,16 +4,34 @@ namespace Gladiator
 {
 	public class Game
 	{
-		public Game()
+
+		private Player _player1;
+		public Player Player1
 		{
+			get { return this._player1; }
+			set { this._player1 = value; }
 		}
 
-		/*public string start(Player p1, Player p2)
+		private Player _player2;
+		public Player Player2
 		{
-
+			get { return this._player2; }
+			set { this._player2 = value; }
 		}
 
-		public string fight(Team t1, Team t2)
+		public Game(Player p1, Player p2)
+		{
+			// Initialisation du jeu
+			this.Player1 = p1;
+			this.Player2 = p2;
+		}
+
+		public string start()
+		{
+			return this.Player1.getFullName() + " VS " + this.Player2.getFullName();
+		}
+
+		/*public string fight(Team t1, Team t2)
 		{
 
 		}*/

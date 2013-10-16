@@ -1,17 +1,26 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Player.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Equipment.cs">
     <Files>
-      <File FileName="Gladiator/Player.cs" Line="16" Column="4" />
-      <File FileName="../../../Projects/C#Project/C#Project/Zoo/Animal.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Team.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Program.cs" Line="14" Column="4" />
+      <File FileName="Gladiator/Equipment.cs" Line="3" Column="20" />
+      <File FileName="Gladiator/Equipments/Dagger.cs" Line="16" Column="24" />
+      <File FileName="Gladiator/Equipments/Helmet.cs" Line="6" Column="29" />
+      <File FileName="Gladiator/Equipments/Net.cs" Line="7" Column="3" />
+      <File FileName="Gladiator/Equipments/RectangularShield.cs" Line="4" Column="31" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State />
+        <State expanded="True">
+          <Node name="Gladiator" expanded="True">
+            <Node name="Equipments" expanded="True" />
+            <Node name="Interfaces" expanded="True" />
+            <Node name="Equipment.cs" selected="True" />
+          </Node>
+        </State>
       </Pad>
       <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
+        <State selected="True" />
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />

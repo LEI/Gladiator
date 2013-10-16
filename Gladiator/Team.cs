@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Gladiator
 {
@@ -18,18 +19,32 @@ namespace Gladiator
 			set { this._description = value; }
 		}
 
+		private List<Champion> _champList = new List<Champion>();
+		public List<Champion> ChampList
+		{
+			get { return this._champList; }
+			set { this._champList = value; }
+		}
+
+		public Team(string p_name, string p_description)
+		{
+			this.Name = p_name;
+			this.Description = p_description;
+		}
+
 		public void Register()
 		{
 
 		}
 
-		public void AddGladiator()
+		public void AddGladiator(Champion p_champion)
 		{
-
+			this.ChampList.Add(p_champion);
 		}
 
-		public void DeleteGladiator()
+		public void DeleteGladiator(Champion p_champion)
 		{
+			this.ChampList.Remove(p_champion);
 
 		}
 
