@@ -7,6 +7,11 @@ namespace Gladiator
 		public Fight()
 		{
 		}
+
+		public duel(Gladiator g1, Gladiator g2)
+		{
+
+		}
 	}
 }
 
