@@ -32,8 +32,28 @@ namespace Gladiator
 			set { this._addDate = DateTime.Now; }
 		}
 
+		public Player (string p_name, string p_firstname, string p_alias)
+		{
+			this.Name = p_name;
+			this.Firstname = p_firstname;
+			this.Alias = p_alias;
+			this.AddDate = DateTime.Now;
+		}
 
+		public string SePresenter()
+		{
+			return("Je m'appel " + this.Name+ " " +this.Firstname+ ", mon pseudo est : " + this.Alias + ", et je suis inscrit depuis le " + this.AddDate.ToString()+".");
+		}
 
+		public string DeleteTeam()
+		{
+
+		}
+
+		public string AddTeam()
+		{
+
+		}
 
 	}
 }

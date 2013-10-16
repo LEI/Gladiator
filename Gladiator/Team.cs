@@ -17,6 +17,26 @@ namespace Gladiator
 			get { return this._description; }
 			set { this._description = value; }
 		}
+
+		public void Register()
+		{
+
+		}
+
+		public void AddGladiator()
+		{
+
+		}
+
+		public void DeleteGladiator()
+		{
+
+		}
+
+		public void ChooseOrder()
+		{
+
+		}
 	}
 }
 
