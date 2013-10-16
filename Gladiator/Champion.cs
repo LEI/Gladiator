@@ -13,11 +13,11 @@ namespace Gladiator
 			set { this._name = value; }
 		}
 
-		private List<Equipment> _equipment = new List<Equipment>();
-		public List<Equipment> Equipment
+		private List<Equipment> _itemList = new List<Equipment>();
+		public List<Equipment> ItemList
 		{
-			get { return this._equipment; }
-			set { this._equipment = value; }
+			get { return this._itemList; }
+			set { this._itemList = value; }
 		}
 		
 		public Champion(string p_name)
@@ -25,20 +25,15 @@ namespace Gladiator
 			this.Name = p_name;
 		}
 
-		public Champion(string p_name, List<Equipment> p_listEquipment)
+		public Champion(string p_name, List<Equipment> p_itemList)
 		{
 			this.Name = p_name;
-			this.Equipment = p_listEquipment;
+			this.ItemList = p_itemList;
 		}
 
-		public void attack()
+		public void addItem(Equipment p_item)
 		{
-
-		}
-
-		public void defense()
-		{
-
+			this.ItemList.Add(p_item);
 		}
 
 		/*public Equipment equip()
@@ -57,6 +52,17 @@ namespace Gladiator
 			equip ();
 
 		}*/	 
+
+		
+		public void attack()
+		{
+
+		}
+
+		public void defense()
+		{
+
+		}
 	}
 }
 

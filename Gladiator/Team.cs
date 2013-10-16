@@ -32,23 +32,23 @@ namespace Gladiator
 			this.Description = p_description;
 		}
 
-		public void Register()
+		public void register()
 		{
 
 		}
 
-		public void AddChampion(Champion p_champion)
+		public void addChampion(Champion p_champion)
 		{
 			this.ChampList.Add(p_champion);
 		}
 
-		public void DeleteGladiator(Champion p_champion)
+		public void deleteGladiator(Champion p_champion)
 		{
 			this.ChampList.Remove(p_champion);
 
 		}
 
-		public void ChooseOrder()
+		public void chooseOrder()
 		{
 
 		}

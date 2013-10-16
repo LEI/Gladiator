@@ -5,8 +5,11 @@ namespace Gladiator.Equipments
 {
 	public class Net : Equipment, IOffense
 	{
-		private string Name = "Filet";
-		private int Weight = 3;
+		public Net()
+		{
+			this.Name = "Filet";
+			this.Weight = 3;
+		}
 
 		public double offense {
 			get {

@@ -5,8 +5,11 @@ namespace Gladiator.Equipments
 {
 	public class RectangularShield : Equipment, IDefense
 	{
-		private string Name = "Bouclier rectangluaire";
-		private int Weight = 2;
+		public RectangularShield()
+		{
+			this.Name = "Bouclier rectangluaire";
+			this.Weight = 2;
+		}
 
 		public double defense {
 			get {

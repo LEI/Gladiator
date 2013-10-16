@@ -66,12 +66,12 @@ namespace Gladiator
 			return fullName;
 		}
 
-		public void AddTeam(Team p_team)
+		public void addTeam(Team p_team)
 		{
 			this.TeamList.Add(p_team);
 		}
 
-		public void DeleteTeam(Team p_team)
+		public void deleteTeam(Team p_team)
 		{
 			this.TeamList.Remove(p_team);
 		}

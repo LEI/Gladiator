@@ -4,6 +4,11 @@ namespace Gladiator
 {
 	public abstract class Equipment
 	{
+		public object offense {
+			get;
+			set;
+		}
+
 		protected string _name;
 		public string Name
 		{
@@ -17,6 +22,7 @@ namespace Gladiator
 			get { return this._weight; }
 			set { this._weight = value; }
 		}
+
 	}
 }
 

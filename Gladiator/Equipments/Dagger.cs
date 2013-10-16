@@ -5,8 +5,12 @@ namespace Gladiator.Equipments
 {
 	public class Dagger : Equipment, IOffense
 	{
-		private string Name = "Dague";
-		private int Weight = 2;
+
+		public Dagger()
+		{
+			this.Name = "Dague";
+			this.Weight = 2;
+		}
 
 		public double offense {
 			get {

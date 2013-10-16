@@ -5,8 +5,11 @@ namespace Gladiator.Equipments
 {
 	public class Helmet : Equipment, IDefense
 	{
-		private string Name = "Casque";
-		private int Weight = 2;
+		public Helmet()
+		{
+			this.Name = "Casque";
+			this.Weight = 2;
+		}
 
 		public double defense {
 			get {
