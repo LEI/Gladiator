@@ -45,12 +45,12 @@ namespace Gladiator
 			return("Je m'appel " + this.Name+ " " +this.Firstname+ ", mon pseudo est : " + this.Alias + ", et je suis inscrit depuis le " + this.AddDate.ToString()+".");
 		}
 
-		public string DeleteTeam()
+		public void DeleteTeam()
 		{
 
 		}
 
-		public string AddTeam()
+		public void AddTeam()
 		{
 
 		}

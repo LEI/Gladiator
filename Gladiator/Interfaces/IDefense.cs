@@ -1,9 +1,10 @@
 using System;
 
-namespace Gladiator
+namespace Gladiator.Interfaces
 {
 	public interface IDefense
 	{
+		float defense{ get; set; }
 	}
 }
 

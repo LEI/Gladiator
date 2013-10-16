@@ -8,7 +8,7 @@ namespace Gladiator
 		{
 		}
 
-		public string start(Player p1, Player p2)
+		/*public string start(Player p1, Player p2)
 		{
 
 		}
@@ -16,7 +16,7 @@ namespace Gladiator
 		public string fight(Team t1, Team t2)
 		{
 
-		}
+		}*/
 	}
 }
 

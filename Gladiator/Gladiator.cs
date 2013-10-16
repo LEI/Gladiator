@@ -26,7 +26,7 @@ namespace Gladiator
 
 		public Equipment Equip()
 		{
-
+			return null;
 		}		 
 	}
 }

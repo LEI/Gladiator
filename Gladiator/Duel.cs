@@ -4,7 +4,7 @@ namespace Gladiator
 {
 	public class Duel
 	{
-		private static int ROUNDS;
+		/*private static int ROUNDS;
 
 		public Duel()
 		{
@@ -13,7 +13,7 @@ namespace Gladiator
 		public faster()
 		{
 
-		}
+		}*/
 	}
 }
 
