@@ -36,14 +36,28 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="Game.cs" />
     <Compile Include="Fight.cs" />
     <Compile Include="Duel.cs" />
-=======
     <Compile Include="Player.cs" />
     <Compile Include="Team.cs" />
->>>>>>> cb01dab141eb887ab347f15cebba837b90bed56a
+    <Compile Include="Gladiator.cs" />
+    <Compile Include="Equipment.cs" />
+    <Compile Include="Equipment\SmallRoundedShield.cs" />
+    <Compile Include="Equipment\Dagger.cs" />
+    <Compile Include="Equipment\Helmet.cs" />
+    <Compile Include="Equipment\RectangularShield.cs" />
+    <Compile Include="Equipment\Sword.cs" />
+    <Compile Include="Equipment\Spear.cs" />
+    <Compile Include="Equipment\Trident.cs" />
+    <Compile Include="Equipment\Net.cs" />
+    <Compile Include="Interfaces\IStats.cs" />
+    <Compile Include="Interfaces\IDefense.cs" />
+    <Compile Include="Interfaces\IOffense.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="Equipment\" />
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
 </Project>
