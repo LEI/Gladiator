@@ -43,21 +43,21 @@
     <Compile Include="Team.cs" />
     <Compile Include="Gladiator.cs" />
     <Compile Include="Equipment.cs" />
-    <Compile Include="Equipment\SmallRoundedShield.cs" />
-    <Compile Include="Equipment\Dagger.cs" />
-    <Compile Include="Equipment\Helmet.cs" />
-    <Compile Include="Equipment\RectangularShield.cs" />
-    <Compile Include="Equipment\Sword.cs" />
-    <Compile Include="Equipment\Spear.cs" />
-    <Compile Include="Equipment\Trident.cs" />
-    <Compile Include="Equipment\Net.cs" />
     <Compile Include="Interfaces\IStats.cs" />
     <Compile Include="Interfaces\IDefense.cs" />
     <Compile Include="Interfaces\IOffense.cs" />
+    <Compile Include="Equipments\SmallRoundedShield.cs" />
+    <Compile Include="Equipments\Dagger.cs" />
+    <Compile Include="Equipments\Helmet.cs" />
+    <Compile Include="Equipments\RectangularShield.cs" />
+    <Compile Include="Equipments\Sword.cs" />
+    <Compile Include="Equipments\Spear.cs" />
+    <Compile Include="Equipments\Trident.cs" />
+    <Compile Include="Equipments\Net.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
-    <Folder Include="Equipment\" />
     <Folder Include="Interfaces\" />
+    <Folder Include="Equipments\" />
   </ItemGroup>
 </Project>

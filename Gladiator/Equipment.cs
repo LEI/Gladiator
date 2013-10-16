@@ -1,10 +1,10 @@
 using System;
 
-namespace Gladiator
+namespace Gladiator.Equipments
 {
 	public class Equipment
 	{
-		private string _name;
+		protected string _name;
 		public string Name
 		{
 			get { return this._name; }
@@ -12,6 +12,11 @@ namespace Gladiator
 		}
 
 		protected int _weight;
+		public int Weight
+		{
+			get { return this._weight; }
+			set { this._weight = value; }
+		}
 	}
 }
 

@@ -1,6 +1,6 @@
 using System;
 
-namespace Gladiator
+namespace Gladiator.Interfaces
 {
 	public interface IStats
 	{

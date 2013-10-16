@@ -4,7 +4,7 @@ namespace Gladiator.Interfaces
 {
 	public interface IOffense
 	{
-		double offense{ get; set; }
+		double offense { get; set; }
 	}
 }
 

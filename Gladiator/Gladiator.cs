@@ -11,7 +11,7 @@ namespace Gladiator
 			set { this._name = value; }
 		}
 
-		private Equipment _equip;
+		//private Equipment _equip;
 
 
 		public void attack()
@@ -24,10 +24,10 @@ namespace Gladiator
 
 		}
 
-		public Equipment Equip()
+		/*public Equipment Equip()
 		{
 			return null;
-		}		 
+		}*/		 
 	}
 }
 

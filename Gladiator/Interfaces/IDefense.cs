@@ -4,7 +4,7 @@ namespace Gladiator.Interfaces
 {
 	public interface IDefense
 	{
-		float defense{ get; set; }
+		double defense { get; set; }
 	}
 }
 

@@ -1,4 +1,6 @@
 using System;
+using Gladiator.Interfaces;
+using Gladiator.Equipments;
 
 namespace Gladiator
 {
@@ -6,7 +8,11 @@ namespace Gladiator
 	{
 		public static void Main(string[] args)
 		{
-			Console.WriteLine("Hello World!");
+
+			Equipment d = new Dagger();
+			Console.WriteLine(d);
+
+
 		}
 	}
 }
