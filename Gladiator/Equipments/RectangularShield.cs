@@ -9,15 +9,7 @@ namespace Gladiator.Equipments
 		{
 			this.Name = "Bouclier rectangluaire";
 			this.Weight = 2;
-		}
-
-		public double defense {
-			get {
-				return this.defense;
-			}
-			set {
-				this.defense = 0.6;
-			}
+			this.Defense = 0.6;
 		}
 	}
 }

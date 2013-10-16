@@ -9,15 +9,7 @@ namespace Gladiator.Equipments
 		{
 			this.Name = "Casque";
 			this.Weight = 2;
-		}
-
-		public double defense {
-			get {
-				return this.defense;
-			}
-			set {
-				this.defense = 0.1;
-			}
+			this.Defense = 0.1;
 		}
 	}
 }

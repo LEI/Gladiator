@@ -53,9 +53,15 @@ namespace Gladiator
 			c1.addItem(i2);
 			c1.addItem(i3);
 			
-			// Affichage du nom des items du champion 1
+			// Affichage des des items du champion 1
 			foreach (Equipment e in c1.ItemList) {
-				//Console.WriteLine(e.offense.ToString());
+				Console.WriteLine(e.Name + " : " + e.Weight + " pts");
+				if (e is IOffense) {
+					Console.WriteLine(e.Offense*100 + "% chance de toucher");
+				}
+				if (e is IDefense) {
+					Console.WriteLine(e.Defense*100 + "% chance de parer");
+				}
 			}
 			
 			Console.WriteLine(newGame.start());

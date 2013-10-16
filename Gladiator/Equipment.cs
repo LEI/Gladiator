@@ -1,14 +1,10 @@
 using System;
+using Gladiator.Interfaces;
 
 namespace Gladiator
 {
 	public abstract class Equipment
 	{
-		public object offense {
-			get;
-			set;
-		}
-
 		protected string _name;
 		public string Name
 		{
@@ -23,6 +19,25 @@ namespace Gladiator
 			set { this._weight = value; }
 		}
 
+		protected double offense;
+		public double Offense {
+			get {
+				return this.offense;
+			}
+			set {
+				this.offense = value;
+			}
+		}
+
+		protected double defense;
+		public double Defense {
+			get {
+				return this.defense;
+			}
+			set {
+				this.defense = value;
+			}
+		}
 	}
 }
 
