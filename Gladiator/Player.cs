@@ -9,7 +9,11 @@ namespace Gladiator
 		public string Name
 		{
 			get { return this._name; }
-			set { this._name = value; }
+			set
+			{
+				//if (value == String.Empty)
+				this._name = value;
+			}
 		}
 
 		private string _firstname;
@@ -37,7 +41,14 @@ namespace Gladiator
 		public List<Team> TeamList
 		{
 			get { return this._teamList; }
-			set { this._teamList = value; }
+			set
+			{
+				if (value.Count > 5)
+				{
+					this._teamList = new List<Team>();
+				}
+				this._teamList = value;
+			}
 		}
 
 		public Player(string p_name, string p_firstname, string p_alias)
@@ -55,21 +66,15 @@ namespace Gladiator
 			return fullName;
 		}
 
-		public string AddTeam(Team p_team)
+		public void AddTeam(Team p_team)
 		{
-			if (this.TeamList.Count < 6) {
-				this.TeamList.Add(p_team);
-				return p_team.Name + " added";
-			} else {
-				return p_team.Name + " not added, 5 teams maximum";
-			}
+			this.TeamList.Add(p_team);
 		}
 
 		public void DeleteTeam(Team p_team)
 		{
 			this.TeamList.Remove(p_team);
 		}
-
 	}
 }
 

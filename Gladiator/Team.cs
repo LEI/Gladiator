@@ -37,7 +37,7 @@ namespace Gladiator
 
 		}
 
-		public void AddGladiator(Champion p_champion)
+		public void AddChampion(Champion p_champion)
 		{
 			this.ChampList.Add(p_champion);
 		}
