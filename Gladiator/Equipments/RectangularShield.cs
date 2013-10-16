@@ -3,9 +3,9 @@ using Gladiator.Interfaces;
 
 namespace Gladiator.Equipments
 {
-	public class Helmet : Equipment, IDefense
+	public class RectangularShield : Equipment, IDefense
 	{
-		private string Name = "Casque";
+		private string Name = "Bouclier rectangluaire";
 		private int Weight = 2;
 
 		public double defense {
@@ -13,7 +13,7 @@ namespace Gladiator.Equipments
 				return this.defense;
 			}
 			set {
-				this.defense = 0.1;
+				this.defense = 0.6;
 			}
 		}
 	}

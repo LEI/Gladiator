@@ -1,9 +1,9 @@
 using System;
 using Gladiator.Interfaces;
 
-namespace Gladiator.Equipment
+namespace Gladiator.Equipments
 {
-	public class Net : IOffense
+	public class Net : Equipment, IOffense
 	{
 		private string Name = "Filet";
 		private int Weight = 3;

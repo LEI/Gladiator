@@ -3,7 +3,7 @@ using Gladiator.Interfaces;
 
 namespace Gladiator.Equipments
 {
-	public class Dagger : IOffense
+	public class Dagger : Equipment, IOffense
 	{
 		private string Name = "Dague";
 		private int Weight = 2;
