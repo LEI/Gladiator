@@ -36,9 +36,14 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="Game.cs" />
     <Compile Include="Fight.cs" />
     <Compile Include="Duel.cs" />
+=======
+    <Compile Include="Player.cs" />
+    <Compile Include="Team.cs" />
+>>>>>>> cb01dab141eb887ab347f15cebba837b90bed56a
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
