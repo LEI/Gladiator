@@ -39,12 +39,18 @@ namespace Gladiator
 			t1.addChampion(c1);
 			t1.addChampion(c2);
 			t1.addChampion(c3);
+
+			t1.viewOrder ();	
 			
 			// Affichage du nom des équipes du joueur 1
-			foreach (Champion c in t1.ChampList) {
+			/*foreach (Champion c in t1.ChampList) {
 				Console.WriteLine(c.Name);
-			}
-			
+			}*/
+			t1.orderChampion (0, 1);
+			t1.viewOrder ();	
+
+			t1.orderChampion (0, 2);
+			t1.viewOrder ();	
 			Equipment i1 = new Dagger();
 			Equipment i2 = new Helmet();
 			Equipment i3 = new Net();

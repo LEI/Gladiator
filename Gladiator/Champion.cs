@@ -38,6 +38,11 @@ namespace Gladiator
 			this.ItemList.Add(p_item);
 		}
 
+		public void deleteItem(Equipment p_item)
+		{
+			this.ItemList.Remove(p_item);
+		}
+
 		public void attack()
 		{
 		
@@ -71,7 +76,7 @@ namespace Gladiator
 
 		public double ratio()
 		{
-			return this.NbWin / this.NbLose;
+			return this.NbWin / (this.NbLose + this.NbWin)* 100;
 		}
 	}
 }
