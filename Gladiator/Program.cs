@@ -40,17 +40,17 @@ namespace Gladiator
 			t1.addChampion(c2);
 			t1.addChampion(c3);
 
-			t1.viewOrder ();	
+			t1.viewOrder();	
 			
 			// Affichage du nom des équipes du joueur 1
 			/*foreach (Champion c in t1.ChampList) {
 				Console.WriteLine(c.Name);
 			}*/
-			t1.orderChampion (0, 1);
-			t1.viewOrder ();	
+			t1.swapChampion(0, 1);
+			t1.viewOrder();	
 
-			t1.orderChampion (0, 2);
-			t1.viewOrder ();	
+			t1.swapChampion(0, 2);
+			t1.viewOrder();	
 			Equipment i1 = new Dagger();
 			Equipment i2 = new Helmet();
 			Equipment i3 = new Net();
@@ -60,10 +60,11 @@ namespace Gladiator
 			c1.addItem(i1);
 			c1.addItem(i2);
 			c1.addItem(i3);
-			c1.addItem (i4);
+			c1.addItem(i4);
 
-			c1.deleteItem (i3);
-			c1.addItem (i5);
+			c1.deleteItem(i3);
+			c1.addItem(i5);
+
 			// Affichage des items du champion 1
 			foreach (Equipment e in c1.ItemList) {
 				Console.WriteLine(e.Name + " : " + e.Weight + " pts");

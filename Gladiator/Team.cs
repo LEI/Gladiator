@@ -34,8 +34,6 @@ namespace Gladiator
 			this.Description = p_description;
 		}
 
-
-
 		public void addChampion(Champion p_champion)
 		{
 			if (this.ChampList.Count < 3)
@@ -50,7 +48,7 @@ namespace Gladiator
 
 		}
 
-		public void orderChampion(int index1, int index2)
+		public void swapChampion(int index1, int index2)
 		{
 			Champion temp = this.ChampList[index1];
 			this.ChampList[index1] = this.ChampList[index2];
