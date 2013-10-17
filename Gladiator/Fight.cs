@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Gladiator
 {
@@ -10,18 +11,11 @@ namespace Gladiator
 			get { return this._team1; }
 			set { this._team1 = value; }
 		}
-		
-		private Team _team2;
-		public Team Team2
-		{
-			get { return this._team2; }
-			set { this._team2 = value; }
-		}
 
-		public Fight(Team t1, Team t2)
+
+		public Fight(List<Team> p_teams)
 		{
-			this.Team1 = t1;
-			this.Team2 = t2;
+
 		}
 	}
 }

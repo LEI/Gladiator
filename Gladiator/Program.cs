@@ -11,7 +11,7 @@ namespace Gladiator
 			Player p1 = new Player("Doe", "John", "DJ");
 			Player p2 = new Player("Roe", "Jane", "RJ");
 
-			Game newGame = new Game(p1,p2);
+			Game newGame = new Game(p1,p2, p1, p2, p1);
 			
 			Team t1 = new Team("A", "lol");
 			Team t2 = new Team("B", "lol");
@@ -24,6 +24,7 @@ namespace Gladiator
 			p2.addTeam(t2);
 			p2.addTeam(t4);
 
+			/*
 			// Affichage du nom des équipes du joueur 1
 			/*foreach (Team t in p1.TeamList) {
 				Console.WriteLine(t.Name);
@@ -43,12 +44,8 @@ namespace Gladiator
 			t1.viewOrder();	
 			
 			// Affichage du nom des équipes du joueur 1
-			/*foreach (Champion c in t1.ChampList) {
+			foreach (Champion c in t1.ChampList) {
 				Console.WriteLine(c.Name);
-			}*/
-			t1.swapChampion(0, 1);
-			t1.viewOrder();	
-
 			t1.swapChampion(0, 2);
 			t1.viewOrder();	
 			Equipment i1 = new Dagger();
@@ -75,8 +72,8 @@ namespace Gladiator
 					Console.WriteLine(e.Defense*100 + "% chance de parer");
 				}
 			}
-			
-			Console.WriteLine(newGame.start());
+			*/
+			newGame.start();
 		}
 	}
 }
