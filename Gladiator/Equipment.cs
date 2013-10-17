@@ -20,7 +20,8 @@ namespace Gladiator
 		}
 
 		protected double offense;
-		public double Offense {
+		public double Offense
+		{
 			get {
 				return this.offense;
 			}
@@ -30,7 +31,8 @@ namespace Gladiator
 		}
 
 		protected double defense;
-		public double Defense {
+		public double Defense
+		{
 			get {
 				return this.defense;
 			}

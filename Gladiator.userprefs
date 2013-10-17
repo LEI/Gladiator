@@ -2,16 +2,13 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Program.cs">
     <Files>
-      <File FileName="Gladiator/Program.cs" Line="58" Column="33" />
+      <File FileName="Gladiator/Program.cs" Line="17" Column="35" />
       <File FileName="Gladiator/Game.cs" Line="15" Column="27" />
       <File FileName="Gladiator/Player.cs" Line="71" Column="30" />
       <File FileName="Gladiator/Team.cs" Line="35" Column="16" />
       <File FileName="Gladiator/Champion.cs" Line="28" Column="34" />
-      <File FileName="Gladiator/Equipment.cs" Line="11" Column="3" />
-      <File FileName="Gladiator/Equipments/Dagger.cs" Line="14" Column="3" />
-      <File FileName="Gladiator/Equipments/Helmet.cs" Line="16" Column="24" />
-      <File FileName="Gladiator/Equipments/Net.cs" Line="14" Column="17" />
-      <File FileName="Gladiator/Equipments/RectangularShield.cs" Line="8" Column="27" />
+      <File FileName="Gladiator/Equipment.cs" Line="6" Column="33" />
+      <File FileName="Gladiator/Equipments/Dagger.cs" Line="10" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">

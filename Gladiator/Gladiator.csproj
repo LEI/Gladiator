@@ -53,7 +53,6 @@
     <Compile Include="Equipments\Spear.cs" />
     <Compile Include="Equipments\Trident.cs" />
     <Compile Include="Equipments\Net.cs" />
-    <Compile Include="GladiatorFighter.cs" />
     <Compile Include="Champion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

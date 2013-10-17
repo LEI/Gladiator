@@ -4,7 +4,6 @@ namespace Gladiator
 {
 	public class Game
 	{
-
 		private Player _player1;
 		public Player Player1
 		{
@@ -29,12 +28,9 @@ namespace Gladiator
 		public string start()
 		{
 			return this.Player1.getFullName() + " VS " + this.Player2.getFullName();
+
+			// Sélection équipes
 		}
-
-		/*public string fight(Team t1, Team t2)
-		{
-
-		}*/
 	}
 }
 

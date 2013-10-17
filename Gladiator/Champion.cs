@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
+using Gladiator.Interfaces;
 using Gladiator.Equipments;
 
 namespace Gladiator
 {
-	public class Champion
+	public class Champion : IStats
 	{
 		private string _name;
 		public string Name
@@ -56,12 +57,33 @@ namespace Gladiator
 		
 		public void attack()
 		{
-
+		
 		}
 
-		public void defense()
+		public void defend()
 		{
 
+		}
+		
+		protected int _nbWin = 0;
+		public int NbWin
+		{
+			get { return this._nbWin; }
+			set { this._nbWin = value; }
+		}
+
+		protected int _nbLose = 0;
+		public int NbLose
+		{
+			get { return this._nbLose; }
+			set { this._nbLose = value; }
+		}
+
+		protected int _nbDraw = 0;
+		public int NbDraw
+		{
+			get { return this._nbDraw; }
+			set { this._nbDraw = value; }
 		}
 	}
 }

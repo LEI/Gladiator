@@ -43,6 +43,7 @@ namespace Gladiator
 			get { return this._teamList; }
 			set
 			{
+				// Vérification à faire au moment de l'ajout addTeam()     (impossible dans set?)
 				if (value.Count > 5)
 				{
 					this._teamList = new List<Team>();
@@ -61,9 +62,7 @@ namespace Gladiator
 
 		public string getFullName()
 		{
-			string fullName = this.Firstname + " '" + this.Alias + "' " + this.Name;
-			//this.FullName = fullName;
-			return fullName;
+			return this.Firstname + " '" + this.Alias + "' " + this.Name;
 		}
 
 		public void addTeam(Team p_team)
