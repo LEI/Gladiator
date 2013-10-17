@@ -25,12 +25,12 @@ namespace Gladiator
 			p2.addTeam(t4);
 
 			// Affichage du nom des équipes du joueur 1
-			foreach (Team t in p1.TeamList) {
+			/*foreach (Team t in p1.TeamList) {
 				Console.WriteLine(t.Name);
-			}
+			}*/
 			
 			// Affichage du nombre d'équipes du joueur 1
-			Console.WriteLine(p1.TeamList.Count);
+			//Console.WriteLine(p1.TeamList.Count);
 
 			Champion c1 = new Champion("Spartacus");
 			Champion c2 = new Champion("Gladiator");
