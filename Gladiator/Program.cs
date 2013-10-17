@@ -55,12 +55,15 @@ namespace Gladiator
 			Equipment i2 = new Helmet();
 			Equipment i3 = new Net();
 			Equipment i4 = new Trident ();
-			
+			Equipment i5 = new Sword ();
+
 			c1.addItem(i1);
 			c1.addItem(i2);
 			c1.addItem(i3);
 			c1.addItem (i4);
-			
+
+			c1.deleteItem (i3);
+			c1.addItem (i5);
 			// Affichage des items du champion 1
 			foreach (Equipment e in c1.ItemList) {
 				Console.WriteLine(e.Name + " : " + e.Weight + " pts");

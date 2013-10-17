@@ -7,6 +7,12 @@ namespace Gladiator
 {
 	public class Champion : IStats
 	{
+		private int _stuffWeight = 0;
+		public int StuffWeight
+		{
+			get { return this._stuffWeight; }
+			set { this._stuffWeight = value; }
+		}
 		private string _name;
 		public string Name
 		{
@@ -35,12 +41,20 @@ namespace Gladiator
 
 		public void addItem(Equipment p_item)
 		{
-			this.ItemList.Add(p_item);
+
+			if (this.StuffWeight + p_item.Weight < 10) {
+				this.ItemList.Add(p_item);
+				this.StuffWeight += p_item.Weight;
+			} else
+				Console.WriteLine ("Vous n'avez pas assez de place pour cet objet. Place dispo : " + (10 - this.StuffWeight) + ".");
+				
 		}
 
 		public void deleteItem(Equipment p_item)
 		{
+			this.StuffWeight -= p_item.Weight;
 			this.ItemList.Remove(p_item);
+			Console.WriteLine ("Place dispo : " + (10 - this.StuffWeight) + ".");
 		}
 
 		public void attack()
