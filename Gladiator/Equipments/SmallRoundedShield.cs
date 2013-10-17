@@ -10,6 +10,7 @@ namespace Gladiator
 			this.Name = "Petit Bouclier rond";
 			this.Weight = 5;
 			this.Defense = 0.2;
+			this.Priority = 0;
 		}
 	}
 }

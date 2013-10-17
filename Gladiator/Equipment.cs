@@ -19,6 +19,17 @@ namespace Gladiator
 			set { this._weight = value; }
 		}
 
+		protected int _priority;
+		public int Priority
+		{
+			get {
+				return this._priority;
+			}
+			set {
+				this._priority = value;
+			}
+		}
+
 		protected double offense;
 		public double Offense
 		{
@@ -40,6 +51,8 @@ namespace Gladiator
 				this.defense = value;
 			}
 		}
+
+
 	}
 }
 

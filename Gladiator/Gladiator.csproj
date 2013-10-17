@@ -54,6 +54,7 @@
     <Compile Include="Equipments\Trident.cs" />
     <Compile Include="Equipments\Net.cs" />
     <Compile Include="Champion.cs" />
+    <Compile Include="Round.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -10,6 +10,7 @@ namespace Gladiator.Equipments
 			this.Name = "Épée";
 			this.Weight = 5;
 			this.Offense = 0.7;
+			this.Priority = 2;
 		}
 	}
 }

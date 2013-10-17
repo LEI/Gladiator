@@ -15,13 +15,14 @@ namespace Gladiator
 
 		public Game(params Player[] t_players)
 		{
+			TeamsRegistered = new List<Team>();
 			//  Si il n'y as que deux joueur et que l'un d'eux n'a pas d'equipe = PLANTAGE
 			if (t_players.Length > 1) {
 				// Initialisation du jeu, traitement minimum de joueur
 				foreach (Player p in t_players) {
-					if (p.TeamList.Count > 0)
+					if (p.TeamList.Count > 0) {
 						TeamsRegistered.Add(p.TeamList[0]);
-					else {
+					} else {
 						throw new Exception("Erreur le joueur : " + p.Alias + " n'a pas d'équipe !");
 						// Le joueur n'a pas d'equipe donc il faut la creer pour jouer.
 					}

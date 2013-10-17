@@ -10,6 +10,7 @@ namespace Gladiator.Equipments
 			this.Name = "Casque";
 			this.Weight = 2;
 			this.Defense = 0.1;
+			this.Priority = 0;
 		}
 	}
 }

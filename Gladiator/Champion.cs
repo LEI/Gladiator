@@ -24,9 +24,19 @@ namespace Gladiator
 		public List<Equipment> ItemList
 		{
 			get { return this._itemList; }
-			set { this._itemList = value; }
+			set { 
+				// Ordre des items
+				this._itemList = value; }
 		}
-		
+
+		private bool _isAlive = true;
+		public bool IsAlive {
+			get { return this._isAlive; }
+			set { this._isAlive = value; }
+		}
+
+		private Random rand = new Random();
+
 		public Champion(string p_name)
 		{
 			this.Name = p_name;
@@ -39,15 +49,44 @@ namespace Gladiator
 			this.ItemList = p_itemList;
 		}
 
+		public void sortItems(List<Equipment> p_itemList)
+		{
+			int i = 0;
+
+
+			foreach (Equipment e in p_itemList) {
+				Console.WriteLine( this.Name + "BEFORE : " + e.Name + e.Priority.ToString());
+			}
+
+			if (p_itemList.Count > 1) {
+				while (i < p_itemList.Count - 1) {
+					// Tri des teams en fonction de leur ratio
+					if (p_itemList[i].Priority < p_itemList[i + 1].Priority) {
+						Equipment temp = p_itemList[i];
+						p_itemList[i] = p_itemList[i + 1];
+						p_itemList[i + 1] = temp;
+						i = 0;
+					} else {
+						i++;
+					}
+				}
+			}
+
+			foreach (Equipment e in p_itemList) {
+				Console.WriteLine(this.Name + "AFTER : " + e.Name + e.Priority.ToString());
+			}
+		}
+
 		public void addItem(Equipment p_item)
 		{
 
-			if (this.StuffWeight + p_item.Weight < 10) {
+			if (this.StuffWeight + p_item.Weight <= 10) {
 				this.ItemList.Add(p_item);
 				this.StuffWeight += p_item.Weight;
+				sortItems(this.ItemList);
 			} else
 				Console.WriteLine ("Vous n'avez pas assez de place pour cet objet. Place dispo : " + (10 - this.StuffWeight) + ".");
-				
+				// TRIE A CHAQUE AJOUT D'ITEM PAR PRIORITE
 		}
 
 		public void deleteItem(Equipment p_item)
@@ -57,9 +96,13 @@ namespace Gladiator
 			Console.WriteLine ("Place dispo : " + (10 - this.StuffWeight) + ".");
 		}
 
-		public void attack()
+		public bool attack(Champion adv)
 		{
-		
+			bool state = false;
+
+			//this.ItemList;
+
+			return state;
 		}
 
 		public void defend()
@@ -90,7 +133,7 @@ namespace Gladiator
 
 		public double ratio()
 		{
-			return this.NbWin / (this.NbLose + this.NbWin)* 100;
+			return (this.NbWin * 100 / (this.NbLose + this.NbWin + this.NbDraw));
 		}
 	}
 }

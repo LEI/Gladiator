@@ -4,6 +4,7 @@ namespace Gladiator
 {
 	public class Duel
 	{
+
 		private Champion _champion1;
 		public Champion Champion1
 		{
@@ -18,10 +19,29 @@ namespace Gladiator
 			set { this._champion2 = value; }
 		}
 
-		public Duel(Champion c1, Champion c2)
+		public Duel(Team t1, Team t2)
 		{
-			this.Champion1 = c1;
-			this.Champion2 = c2;
+			int i = 0, j = 0;
+			while (t1.ChampList[2].IsAlive & t2.ChampList[2].IsAlive & i < 3 & j < 3) {
+				if (!t1.ChampList[i].IsAlive)
+					i++;
+				if (!t2.ChampList[j].IsAlive)
+					j++;
+				new Round(t1.ChampList[i], t2.ChampList[j]);
+				//Console.WriteLine(t1.ChampList[i].Name + " : " + t1.ChampList[i].IsAlive.ToString());
+				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
+			}
+			if (i > j) {
+				t2.NbWin++;
+				t1.NbLose++;
+			} else if (i < j) {
+				t1.NbWin++;
+				t2.NbLose++;
+			} else if (i == j) {
+				t1.NbDraw++;
+				t2.NbDraw++;
+			}
+
 		}
 	}
 }

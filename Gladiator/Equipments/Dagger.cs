@@ -10,6 +10,7 @@ namespace Gladiator.Equipments
 			this.Name = "Dague";
 			this.Weight = 2;
 			this.Offense = 0.6;
+			this.Priority = 1;
 		}
 	}
 }

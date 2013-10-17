@@ -10,6 +10,7 @@ namespace Gladiator.Equipments
 			this.Name = "Lance";
 			this.Weight = 7;
 			this.Offense = 0.5;
+			this.Priority = 4;
 		}
 	}
 }

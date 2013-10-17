@@ -10,6 +10,7 @@ namespace Gladiator.Equipments
 			this.Name = "Filet";
 			this.Weight = 3;
 			this.Offense = 0.3;
+			this.Priority = 5;
 		}
 	}
 }
