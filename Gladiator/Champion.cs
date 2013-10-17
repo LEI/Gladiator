@@ -53,11 +53,6 @@ namespace Gladiator
 		{
 			int i = 0;
 
-
-			foreach (Equipment e in p_itemList) {
-				Console.WriteLine( this.Name + "BEFORE : " + e.Name + e.Priority.ToString());
-			}
-
 			if (p_itemList.Count > 1) {
 				while (i < p_itemList.Count - 1) {
 					// Tri des teams en fonction de leur ratio
@@ -70,10 +65,6 @@ namespace Gladiator
 						i++;
 					}
 				}
-			}
-
-			foreach (Equipment e in p_itemList) {
-				Console.WriteLine(this.Name + "AFTER : " + e.Name + e.Priority.ToString());
 			}
 		}
 
@@ -97,16 +88,30 @@ namespace Gladiator
 		}
 
 		public bool attack(Champion adv)
-		{
-			bool state = false;
-
+		{  // A MODIFFFF
+			bool alive = true;
+			if (rand.NextDouble() < this.ItemList[0].Priority) {
+				Console.WriteLine("ATTAQUE REUSSI");
+				if(!adv.defend())
+					alive = false;
+			}
 			//this.ItemList;
 
-			return state;
+			return alive;
 		}
 
-		public void defend()
+		public bool defend()
 		{
+			bool state = false;
+			foreach (Equipment e in this.ItemList) {
+				if (e.Priority == 0) {
+					if (rand.NextDouble() < e.Defense) {
+						state = true;
+						Console.WriteLine("PARADE REUSSI");
+					}
+				}
+			}
+			return state;
 
 		}
 		
