@@ -27,11 +27,14 @@ namespace Gladiator
 			set { this._champList = value; }
 		}
 
+
 		public Team(string p_name, string p_description)
 		{
 			this.Name = p_name;
 			this.Description = p_description;
 		}
+
+
 
 		public void addChampion(Champion p_champion)
 		{
@@ -47,9 +50,19 @@ namespace Gladiator
 
 		}
 
-		public void orderChampion()
+		public void orderChampion(int index1, int index2)
 		{
+			Champion temp = this.ChampList[index1];
+			this.ChampList[index1] = this.ChampList[index2];
+			this.ChampList[index2] = temp;
+		}
 
+		public void viewOrder()
+		{
+			foreach (Champion c in this.ChampList)
+			{
+				Console.WriteLine(c.Name);
+			}
 		}
 
 		protected int _nbWin = 0;
@@ -75,7 +88,12 @@ namespace Gladiator
 
 		public double ratio()
 		{
-			return this.NbWin / this.NbLose;
+			return this.NbWin / (this.NbLose + this.NbWin) *100;
+		}
+
+		public int NbMatch()
+		{
+			return (this.NbWin + this.NbLose + this.NbDraw);
 		}
 	}
 }
