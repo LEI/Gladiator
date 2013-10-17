@@ -1,34 +1,39 @@
 using System;
+using System.Collections.Generic;
 
 namespace Gladiator
 {
 	public class Game
 	{
-		private Player _player1;
-		public Player Player1
+
+		private List<Team> _teamsRegistered;
+		public List<Team> TeamsRegistered
 		{
-			get { return this._player1; }
-			set { this._player1 = value; }
+			get { return this._teamsRegistered; }
+			set { this._teamsRegistered = value; }
 		}
 
-		private Player _player2;
-		public Player Player2
+		public Game(params Player[] t_players)
 		{
-			get { return this._player2; }
-			set { this._player2 = value; }
+			//  Si il n'y as que deux joueur et que l'un d'eux n'a pas d'equipe = PLANTAGE
+			if (t_players.Length > 1) {
+				// Initialisation du jeu, traitement minimum de joueur
+				foreach (Player p in t_players) {
+					if (p.TeamList.Count > 0)
+						TeamsRegistered.Add(p.TeamList[0]);
+					else {
+						throw new Exception("Erreur le joueur : " + p.Alias + " n'a pas d'équipe !");
+						// Le joueur n'a pas d'equipe donc il faut la creer pour jouer.
+					}
+				}
+			}
+			else
+				throw new Exception("Erreur il faut au minimum 2 joueurs.");
 		}
 
-		public Game(Player p1, Player p2)
+		public void start()
 		{
-			// Initialisation du jeu
-			this.Player1 = p1;
-			this.Player2 = p2;
-		}
-
-		public string start()
-		{
-			return this.Player1.getFullName() + " VS " + this.Player2.getFullName();
-
+			new Fight(TeamsRegistered);
 			// Sélection équipes en fonction de Team.ratio()
 		}
 	}
