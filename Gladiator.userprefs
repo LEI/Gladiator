@@ -1,28 +1,20 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Champion.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Program.cs">
     <Files>
-      <File FileName="Gladiator/Program.cs" Line="43" Column="16" />
-      <File FileName="Gladiator/Game.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Program.cs" Line="49" Column="2" />
+      <File FileName="Gladiator/Game.cs" Line="23" Column="40" />
+      <File FileName="Gladiator/Fight.cs" Line="16" Column="34" />
+      <File FileName="Gladiator/Duel.cs" Line="1" Column="1" />
       <File FileName="Gladiator/Player.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Team.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Champion.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Team.cs" Line="54" Column="50" />
+      <File FileName="Gladiator/Champion.cs" Line="53" Column="43" />
       <File FileName="Gladiator/Equipment.cs" Line="1" Column="1" />
       <File FileName="Gladiator/Equipments/Dagger.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Fight.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Duel.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Interfaces/IStats.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Interfaces/IDefense.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
-        <State expanded="True">
-          <Node name="Gladiator" expanded="True">
-            <Node name="Equipments" expanded="True" />
-            <Node name="Interfaces" expanded="True" />
-            <Node name="Champion.cs" selected="True" />
-          </Node>
-        </State>
+        <State />
       </Pad>
       <Pad Id="ClassPad">
         <State selected="True" />

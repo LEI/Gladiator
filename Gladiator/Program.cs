@@ -72,8 +72,8 @@ namespace Gladiator
 			Equipment i1 = new Dagger();
 			Equipment i2 = new Helmet();
 			Equipment i3 = new Net();
-			Equipment i4 = new Trident ();
-			Equipment i5 = new Sword ();
+			Equipment i4 = new Trident();
+			Equipment i5 = new Sword();
 			Equipment i6 = new Spear();
 			Equipment i7 = new RectangularShield();
 			Equipment i8 = new SmallRoundedShield();
@@ -123,12 +123,8 @@ namespace Gladiator
 			c12.addItem(i5);
 
 
-			/*foreach (Equipment e in c1.ItemList) {
-				Console.WriteLine(e.Priority.ToString());
-			}*/
 
-
-			Game newGame = new Game(p1,p2, p3, p4);
+			Game newGame = new Game(p1, p2, p3, p4);
 			newGame.start();
 		}
 	}

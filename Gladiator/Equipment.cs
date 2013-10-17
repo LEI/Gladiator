@@ -30,25 +30,25 @@ namespace Gladiator
 			}
 		}
 
-		protected double offense;
+		protected double _offense;
 		public double Offense
 		{
 			get {
-				return this.offense;
+				return this._offense;
 			}
 			set {
-				this.offense = value;
+				this._offense = value;
 			}
 		}
 
-		protected double defense;
+		protected double _defense;
 		public double Defense
 		{
 			get {
-				return this.defense;
+				return this._defense;
 			}
 			set {
-				this.defense = value;
+				this._defense = value;
 			}
 		}
 

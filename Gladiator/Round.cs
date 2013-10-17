@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Gladiator
 {
@@ -6,19 +7,16 @@ namespace Gladiator
 	{
 		public Round(Champion c1, Champion c2)
 		{
+			List<Champion> round = new List<Champion>();
+			round.Add(c1);
+			round.Add(c2);
 
-			// ON EN AI LAAAAAAAAAAAAAAA
-			if (c1.attack(c2)) {
-				Console.WriteLine("C1 ATTAQUE");
-				c2.IsAlive = false;
-			}
-			if (c2.attack(c1)) {
-				Console.WriteLine("C2 ATTAQUE");
-				c1.IsAlive = false;
-			}
-			c2.IsAlive = false;
+			List<Champion> deadList = Champion.attack(round);
 
-			 // if...
+			foreach (Champion c in deadList) {
+				c.IsAlive = false;
+				Console.WriteLine(c.Name + " est mort");
+			}
 
 
 
