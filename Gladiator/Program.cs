@@ -48,10 +48,12 @@ namespace Gladiator
 			Equipment i1 = new Dagger();
 			Equipment i2 = new Helmet();
 			Equipment i3 = new Net();
+			Equipment i4 = new Trident ();
 			
 			c1.addItem(i1);
 			c1.addItem(i2);
 			c1.addItem(i3);
+			c1.addItem (i4);
 			
 			// Affichage des items du champion 1
 			foreach (Equipment e in c1.ItemList) {

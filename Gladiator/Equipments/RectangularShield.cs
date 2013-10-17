@@ -8,8 +8,8 @@ namespace Gladiator.Equipments
 		public RectangularShield()
 		{
 			this.Name = "Bouclier rectangluaire";
-			this.Weight = 2;
-			this.Defense = 0.6;
+			this.Weight = 8;
+			this.Defense = 0.3;
 		}
 	}
 }
