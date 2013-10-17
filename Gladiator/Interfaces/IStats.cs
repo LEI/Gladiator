@@ -7,6 +7,8 @@ namespace Gladiator.Interfaces
 		int NbWin { get; set; }
 		int NbLose { get; set; }
 		int NbDraw { get; set; }
+
+		double ratio();
 	}
 }
 

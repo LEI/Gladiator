@@ -29,7 +29,7 @@ namespace Gladiator
 		{
 			return this.Player1.getFullName() + " VS " + this.Player2.getFullName();
 
-			// Sélection équipes
+			// Sélection équipes en fonction de Team.ratio()
 		}
 	}
 }

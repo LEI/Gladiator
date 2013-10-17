@@ -26,6 +26,7 @@ namespace Gladiator
 			this.Name = p_name;
 		}
 
+		// Deuxieme constructeur : attend un nom et une liste d'items
 		public Champion(string p_name, List<Equipment> p_itemList)
 		{
 			this.Name = p_name;
@@ -37,24 +38,6 @@ namespace Gladiator
 			this.ItemList.Add(p_item);
 		}
 
-		/*public Equipment equip()
-		{
-			this.ListEquip.Add (Dagger);
-		}
-
-		public static string myEquipment()
-		{
-			return "Je suis équipé de : " + this._listEquip + ". \n";
-		}
-
-		public GladiatorFighter(string p_name)
-		{
-			this.Name = p_name;
-			equip ();
-
-		}*/	 
-
-		
 		public void attack()
 		{
 		
@@ -84,6 +67,11 @@ namespace Gladiator
 		{
 			get { return this._nbDraw; }
 			set { this._nbDraw = value; }
+		}
+
+		public double ratio()
+		{
+			return this.NbWin / this.NbLose;
 		}
 	}
 }

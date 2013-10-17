@@ -29,8 +29,8 @@ namespace Gladiator
 				Console.WriteLine(t.Name);
 			}
 			
-			// Affichage du nombre d'équipes du joueur 2
-			Console.WriteLine(p2.TeamList.Count);
+			// Affichage du nombre d'équipes du joueur 1
+			Console.WriteLine(p1.TeamList.Count);
 
 			Champion c1 = new Champion("Spartacus");
 			Champion c2 = new Champion("Gladiator");

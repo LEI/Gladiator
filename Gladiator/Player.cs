@@ -41,15 +41,7 @@ namespace Gladiator
 		public List<Team> TeamList
 		{
 			get { return this._teamList; }
-			set
-			{
-				// Vérification à faire au moment de l'ajout addTeam()     (impossible dans set?)
-				if (value.Count > 5)
-				{
-					this._teamList = new List<Team>();
-				}
-				this._teamList = value;
-			}
+			set { this._teamList = value; }
 		}
 
 		public Player(string p_name, string p_firstname, string p_alias)
@@ -67,7 +59,10 @@ namespace Gladiator
 
 		public void addTeam(Team p_team)
 		{
-			this.TeamList.Add(p_team);
+			if (this.TeamList.Count < 5)
+				this.TeamList.Add(p_team);
+			else
+				throw new Exception("5 équipes maximum");
 		}
 
 		public void deleteTeam(Team p_team)

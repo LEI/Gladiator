@@ -35,16 +35,19 @@ namespace Gladiator
 
 		public void addChampion(Champion p_champion)
 		{
-			this.ChampList.Add(p_champion);
+			if (this.ChampList.Count < 3)
+				this.ChampList.Add(p_champion);
+			else
+				throw new Exception("3 gladiateurs maximum");
 		}
 
-		public void deleteGladiator(Champion p_champion)
+		public void deleteChampion(Champion p_champion)
 		{
 			this.ChampList.Remove(p_champion);
 
 		}
 
-		public void chooseOrder()
+		public void orderChampion()
 		{
 
 		}
@@ -68,6 +71,11 @@ namespace Gladiator
 		{
 			get { return this._nbDraw; }
 			set { this._nbDraw = value; }
+		}
+
+		public double ratio()
+		{
+			return this.NbWin / this.NbLose;
 		}
 	}
 }
