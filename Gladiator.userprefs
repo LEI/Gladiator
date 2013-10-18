@@ -1,25 +1,15 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Round.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Game.cs">
     <Files>
-      <File FileName="Gladiator/Program.cs" Line="89" Column="22" />
-      <File FileName="Gladiator/Game.cs" Line="27" Column="1" />
-      <File FileName="Gladiator/Fight.cs" Line="27" Column="53" />
-      <File FileName="Gladiator/Duel.cs" Line="24" Column="34" />
-      <File FileName="Gladiator/Round.cs" Line="30" Column="5" />
-      <File FileName="Gladiator/Champion.cs" Line="121" Column="61" />
-      <File FileName="Gladiator/Team.cs" Line="97" Column="15" />
-      <File FileName="Gladiator/Interfaces/IOffense.cs" Line="7" Column="31" />
-      <File FileName="Gladiator/Equipments/Dagger.cs" Line="13" Column="21" />
-      <File FileName="Gladiator/Equipments/Trident.cs" Line="14" Column="34" />
-      <File FileName="Gladiator/Equipments/Helmet.cs" Line="13" Column="4" />
-      <File FileName="Gladiator/Equipments/Net.cs" Line="13" Column="21" />
-      <File FileName="Gladiator/Equipments/RectangularShield.cs" Line="13" Column="22" />
-      <File FileName="Gladiator/Equipments/Spear.cs" Line="13" Column="21" />
-      <File FileName="Gladiator/Equipments/Sword.cs" Line="13" Column="21" />
-      <File FileName="Gladiator/Interfaces/IStats.cs" Line="9" Column="13" />
-      <File FileName="Gladiator/Player.cs" Line="29" Column="31" />
-      <File FileName="Gladiator/Equipments/SmallRoundedShield.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Program.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Game.cs" Line="33" Column="4" />
+      <File FileName="Gladiator/Fight.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Duel.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Round.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Champion.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Player.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Team.cs" Line="1" Column="1" />
       <File FileName="Gladiator/Equipment.cs" Line="1" Column="1" />
     </Files>
     <Pads>
@@ -27,13 +17,12 @@
         <State expanded="True">
           <Node name="Gladiator" expanded="True">
             <Node name="Equipments" expanded="True" />
-            <Node name="Interfaces" expanded="True" />
-            <Node name="Round.cs" selected="True" />
+            <Node name="Game.cs" selected="True" />
           </Node>
         </State>
       </Pad>
       <Pad Id="ClassPad">
-        <State expanded="True" selected="True" />
+        <State selected="True" />
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />
