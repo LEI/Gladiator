@@ -2,10 +2,10 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Game.cs">
     <Files>
-      <File FileName="Gladiator/Program.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Game.cs" Line="33" Column="4" />
+      <File FileName="Gladiator/Program.cs" Line="34" Column="1" />
+      <File FileName="Gladiator/Game.cs" Line="18" Column="39" />
       <File FileName="Gladiator/Fight.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Duel.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Duel.cs" Line="30" Column="87" />
       <File FileName="Gladiator/Round.cs" Line="1" Column="1" />
       <File FileName="Gladiator/Champion.cs" Line="1" Column="1" />
       <File FileName="Gladiator/Player.cs" Line="1" Column="1" />

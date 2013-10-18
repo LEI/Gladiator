@@ -11,12 +11,12 @@ namespace Gladiator
 			Player p1 = new Player("Doe", "John", "DJ");
 			Player p2 = new Player("Roe", "Jane", "RJ");
 			Player p3 = new Player("Save", "Nico", "BG");
-			Player p4 = new Player("Gui", "LEI", "NRV");
+			Player p4 = new Player("NRV", "Gui", "LEI");
 
-			Team t1 = new Team("A", "lol");
-			Team t2 = new Team("B", "lol");
-			Team t3 = new Team("C", "lol");
-			Team t4 = new Team("D", "lol");
+			Team t1 = new Team("Aye", "lol");
+			Team t2 = new Team("Bye", "lol");
+			Team t3 = new Team("Cye", "lol");
+			Team t4 = new Team("Dye", "lol");
 
 			t1.NbWin = 6;
 			t1.NbLose = 3;
@@ -32,6 +32,7 @@ namespace Gladiator
 			p3.addTeam(t3);
 			p4.addTeam(t4);
 
+
 			Champion c1 = new Champion("ONEA");
 			Champion c2 = new Champion("ONEB");
 			Champion c3 = new Champion("ONEC");
@@ -44,9 +45,9 @@ namespace Gladiator
 			Champion c8 = new Champion("TROIB");
 			Champion c9 = new Champion("TROIC");
 
-			Champion c10 = new Champion("QUATRA");
-			Champion c11 = new Champion("QUATRB");
-			Champion c12 = new Champion("QUATRC");
+			Champion c10 = new Champion("QUATA");
+			Champion c11 = new Champion("QUATB");
+			Champion c12 = new Champion("QUATC");
 
 			t1.addChampion(c1);
 			t1.addChampion(c2);
@@ -72,14 +73,14 @@ namespace Gladiator
 			Equipment trident = new Trident();
 			Equipment epee = new Sword();
 			Equipment lance = new Spear();
-			Equipment grandbouc = new RectangularShield();
-			Equipment ptitbouc = new SmallRoundedShield();
+			Equipment bouclierRect = new RectangularShield();
+			Equipment bouclierRond = new SmallRoundedShield();
 
 			c1.addItem(dague);
 			c1.addItem(epee);
 
 			c2.addItem(epee);
-			c2.addItem(ptitbouc);
+			c2.addItem(bouclierRond);
 
 			c3.addItem(dague);
 			c3.addItem(filet);
@@ -88,7 +89,7 @@ namespace Gladiator
 			c4.addItem(dague);
 
 			c5.addItem(epee);
-			c5.addItem(ptitbouc);
+			c5.addItem(bouclierRond);
 
 			c6.addItem(filet2);
 			c6.addItem(dague);
@@ -106,10 +107,10 @@ namespace Gladiator
 			c10.addItem(dague);
 						
 			c11.addItem(dague);
-			c11.addItem(grandbouc);
+			c11.addItem(bouclierRect);
 						
 			c12.addItem(casque);
-			c12.addItem(ptitbouc);
+			c12.addItem(bouclierRond);
 
 
 			Game newGame = new Game(p1, p2, p3, p4);
