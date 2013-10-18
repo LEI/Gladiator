@@ -102,28 +102,26 @@ namespace Gladiator
 			                                 select b_equipement).ToList();
 
 			foreach (Equipment e in l_lstEquiPrio) {
-				Console.WriteLine(e.Name + " Prio ; " + e.Priority);
 				// Probabilité de toucher
 				if (e.Priority == p_priority) {
+					Console.WriteLine(this.Name + " utilise " + e.Name + " (" + e.Priority + ")");
 					if (Rand.NextDouble() < e.Offense) {
 						//result = this.Name + " HIT " + p_adv.Name + "\n";
-						Console.WriteLine("* " + this.Name + " HIT " + p_adv.Name + " with "+ e.Name);
+						Console.WriteLine("* " + this.Name + " touche " + p_adv.Name + " avec "+ e.Name);
 
 					bool hit = p_adv.defend();
-						Console.WriteLine("HIT OR NOT : " + hit.ToString());
-						if (hit == true ) {
-
+						if (hit == true) {
 							//result+=" TOUCHED! \n";
-							Console.WriteLine(" TOUCHED! \n");
+							Console.WriteLine("-> TUE");
 							p_adv.IsAlive = false;
 						} else {
 							//result += p_adv.Name + " BLOCKED! \n";
-							Console.WriteLine(p_adv.Name + " BLOCKED! \n");
+							Console.WriteLine(p_adv.Name + "-> BLOQUE");
 						}
 
 
 					} else {
-						result = "* " + this.Name + " MISS " + p_adv.Name;
+						result = "* " + this.Name + " MANQUE " + p_adv.Name;
 					}
 				}	//this.ItemList;
 			}
@@ -133,15 +131,12 @@ namespace Gladiator
 
 		public bool defend()
 		{
-			Console.WriteLine(this.Name + " entre en mode defense");
 			bool hit = true;
 			foreach (Equipment e in this.ItemList) {
 				// Traitement des équipements défensifs
 				if (e is IDefense) {
-					Console.WriteLine(this.Name + " Item :" + e.Name + " Priorite :"+ e.Priority + " Proba : " + e.Defense);
 					// Probabilité de parer
 					if (this.Rand.NextDouble() < e.Defense) {
-						Console.WriteLine(this.Name + " Defend with : " + e.Name);
 						return hit = false;
 					}
 				}

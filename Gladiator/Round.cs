@@ -22,12 +22,12 @@ namespace Gladiator
 
 			}
 
-			Console.WriteLine(result1);
-			Console.WriteLine(result2);
+			//Console.WriteLine(result1);
+			//Console.WriteLine(result2);
 			if (c1.IsAlive == false)
-				Console.WriteLine(c1.Name + " fall on battlefield :( ");
+				Console.WriteLine(c1.Name + " fall on battlefield");
 			if (c2.IsAlive == false)
-				Console.WriteLine(c2.Name + " fall on battlefield :( ");
+				Console.WriteLine(c2.Name + " fall on battlefield");
 
 		}
 		

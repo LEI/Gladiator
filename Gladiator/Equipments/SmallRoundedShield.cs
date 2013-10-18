@@ -7,7 +7,7 @@ namespace Gladiator
 	{
 		public SmallRoundedShield()
 		{
-			this.Name = "Petit Bouclier rond";
+			this.Name = "Petit bouclier rond";
 			this.Weight = 5;
 			this.Defense = 0.2;
 			this.Priority = 0;
