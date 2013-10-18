@@ -28,20 +28,20 @@ namespace Gladiator
 			t4.NbLose = 3;
 
 			p1.addTeam(t1);
-			p3.addTeam(t3);
+			//p3.addTeam(t3);
 
 			p2.addTeam(t2);
-			p4.addTeam(t4);
+			//p4.addTeam(t4);
 
 
 
-			Champion c1 = new Champion("1Spartacus");
-			Champion c2 = new Champion("1Gladiator");
-			Champion c3 = new Champion("1Hercule");
+			Champion c1 = new Champion("1 ONEA");
+			Champion c2 = new Champion("1 ONEB");
+			Champion c3 = new Champion("1 ONEC");
 
-			Champion c4 = new Champion("2Spartacus");
-			Champion c5 = new Champion("2Gladiator");
-			Champion c6 = new Champion("2Hercule");
+			Champion c4 = new Champion("2 DEUA");
+			Champion c5 = new Champion("2 DEUB");
+			Champion c6 = new Champion("2 DEUC");
 
 			Champion c7 = new Champion("3Spartacus");
 			Champion c8 = new Champion("3Gladiator");
@@ -69,40 +69,35 @@ namespace Gladiator
 			t4.addChampion(c11);
 			t4.addChampion(c12);
 
-			Equipment i1 = new Dagger();
-			Equipment i2 = new Helmet();
-			Equipment i3 = new Net();
-			Equipment i4 = new Trident();
-			Equipment i5 = new Sword();
-			Equipment i6 = new Spear();
-			Equipment i7 = new RectangularShield();
-			Equipment i8 = new SmallRoundedShield();
+			Equipment dague = new Dagger();
+			Equipment casque = new Helmet();
+			Equipment filet = new Net();
+			Equipment trident = new Trident();
+			Equipment epee = new Sword();
+			Equipment lance = new Spear();
+			Equipment grandbouc = new RectangularShield();
+			Equipment ptitbouc = new SmallRoundedShield();
 
-			c1.addItem(i1);
-			c1.addItem(i2);
-			c1.addItem(i3);
-			c1.addItem(i1);
+			c1.addItem(lance);
+			c1.addItem(casque);
 
-			c2.addItem(i4);
-			c2.addItem(i3);
+			c2.addItem(dague);
+			c2.addItem(grandbouc);
 
 
-			c3.addItem(i1);
-			c3.addItem(i2);
-			c3.addItem(i3);
-			c3.addItem(i3);
+			c3.addItem(epee);
+			c3.addItem(ptitbouc);
 
-			c4.addItem(i1);
-			c4.addItem(i8);
-			c4.addItem(i2);
+			c4.addItem(lance);
+			c4.addItem(casque);
 
-			c5.addItem(i5);
-			c5.addItem(i8);
+			c5.addItem(epee);
+			c5.addItem(ptitbouc);
 
-			c6.addItem(i7);
-			c6.addItem(i1);
+			c6.addItem(dague);
+			c6.addItem(dague);c6.addItem(dague);c6.addItem(dague);c6.addItem(dague);
 
-			c7.addItem(i1);
+			/*c7.addItem(i1);
 			c7.addItem(i1);
 			c7.addItem(i1);
 			c7.addItem(i1);
@@ -122,9 +117,9 @@ namespace Gladiator
 			c12.addItem(i1);
 			c12.addItem(i5);
 
+*/
 
-
-			Game newGame = new Game(p1, p2, p3, p4);
+			Game newGame = new Game(p1, p2);
 			newGame.start();
 		}
 	}

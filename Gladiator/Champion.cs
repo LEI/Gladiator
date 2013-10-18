@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Gladiator.Interfaces;
 using Gladiator.Equipments;
+using System.Linq;
 
 namespace Gladiator
 {
@@ -34,7 +35,7 @@ namespace Gladiator
 			get { return this._isAlive; }
 			set { this._isAlive = value; }
 		}
-
+		
 		private Random rand = new Random();
 		public Random Rand {
 			get { return this.rand; }
@@ -91,62 +92,64 @@ namespace Gladiator
 			Console.WriteLine (this.Name + " jette l'équipement " + p_item.Name + ", " + (10 - this.StuffWeight) + " points restant");
 		}
 
-		/*public bool attack(Champion p_champ)
+		public string attack(Champion p_adv, int p_priority)
 		{
-			bool alive = true;
-			// Probabilité de toucher
-			if (rand.NextDouble() < this.ItemList[0].Priority) {
-				Console.WriteLine(this.Name + " HIT " + p_champ.Name);
-				if(!p_champ.defend())
-					alive = false;
-			} else {
-				Console.WriteLine(this.Name + " MISS " + p_champ.Name);
-			}
-			//this.ItemList;
+			string result = null;
 
-			return alive;
-		}*/
 
-		public static List<Champion> attack(List<Champion> p_list)
-		{
-			List<Champion> deadList = new List<Champion>();
+			List<Equipment> l_lstEquiPrio = (from b_equipement in this.ItemList
+			                                 where b_equipement.Priority == p_priority
+			                                 select b_equipement).ToList();
 
-			foreach (Champion c in p_list) {
+			foreach (Equipment e in l_lstEquiPrio) {
+				Console.WriteLine(e.Name + " Prio ; " + e.Priority);
 				// Probabilité de toucher
-				if (c.Rand.NextDouble() < c.ItemList[0].Priority) {
-					Console.WriteLine(c.Name + " HIT ");
-					if (!c.defend()) {
-						Console.WriteLine("CRITICAL HIT");
-						deadList.Add(c);
+				if (e.Priority == p_priority) {
+					if (Rand.NextDouble() < e.Offense) {
+						//result = this.Name + " HIT " + p_adv.Name + "\n";
+						Console.WriteLine("* " + this.Name + " HIT " + p_adv.Name + " with "+ e.Name);
+
+					bool hit = p_adv.defend();
+						Console.WriteLine("HIT OR NOT : " + hit.ToString());
+						if (hit == true ) {
+
+							//result+=" TOUCHED! \n";
+							Console.WriteLine(" TOUCHED! \n");
+							p_adv.IsAlive = false;
+						} else {
+							//result += p_adv.Name + " BLOCKED! \n";
+							Console.WriteLine(p_adv.Name + " BLOCKED! \n");
+						}
+
+
 					} else {
-						Console.WriteLine("ATTACK BLOCKED");
+						result = "* " + this.Name + " MISS " + p_adv.Name;
 					}
-				} else {
-					Console.WriteLine(c.Name + " MISS ");
-				}
-				//this.ItemList;
+				}	//this.ItemList;
 			}
 
-			return deadList;
+			return result;
 		}
 
 		public bool defend()
 		{
-			bool hit = false;
+			Console.WriteLine(this.Name + " entre en mode defense");
+			bool hit = true;
 			foreach (Equipment e in this.ItemList) {
 				// Traitement des équipements défensifs
-				if (e.Priority == 0) {
+				if (e is IDefense) {
+					Console.WriteLine(this.Name + " Item :" + e.Name + " Priorite :"+ e.Priority + " Proba : " + e.Defense);
 					// Probabilité de parer
-					if (this.Rand.NextDouble() > e.Defense) {
-					} else {
-						return hit = true;
+					if (this.Rand.NextDouble() < e.Defense) {
+						Console.WriteLine(this.Name + " Defend with : " + e.Name);
+						return hit = false;
 					}
 				}
 			}
 
 			return hit;
 		}
-		
+
 		protected int _nbWin = 0;
 		public int NbWin
 		{
