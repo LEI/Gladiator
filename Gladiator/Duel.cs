@@ -27,7 +27,7 @@ namespace Gladiator
 					i++;
 				if (!t2.ChampList[j].IsAlive)
 					j++;
-				Console.WriteLine("\n----- ROUND  " + nbRound + " : " + t1.ChampList[i].Name + " VS " + t2.ChampList[j].Name + " -----");
+				Console.WriteLine("\n----- ROUND  " + nbRound + " : " + t1.ChampList[i].Name + " VS " + t2.ChampList[j].Name + " -----\n");
 				new Round(t1.ChampList[i], t2.ChampList[j]);
 				nbRound++;
 				//Console.WriteLine(t1.ChampList[i].Name + " : " + t1.ChampList[i].IsAlive.ToString());

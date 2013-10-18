@@ -11,6 +11,7 @@ namespace Gladiator.Equipments
 			this.Weight = 3;
 			this.Offense = 0.3;
 			this.Priority = 5;
+			this.Used = false;
 		}
 	}
 }

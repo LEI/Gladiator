@@ -25,7 +25,10 @@ namespace Gladiator
 					i++;
 			}
 			for (i=0; i < p_teamsRegitered.Count-1; i += 2) {
+				Console.WriteLine("\n----- MATCH : " + p_teamsRegitered[i].Name + "(" + p_teamsRegitered[i].NbWin + "/"+ p_teamsRegitered[i].NbLose + ") VS " + p_teamsRegitered[i+1].Name + "(" + p_teamsRegitered[i+1].NbWin + "/"+ p_teamsRegitered[i+1].NbLose + ") -----");
 				new Duel(p_teamsRegitered[i], p_teamsRegitered[i+1]);
+				Console.WriteLine(p_teamsRegitered[i].Name + " a remporté " + p_teamsRegitered[i].NbWin + " matchs");
+				Console.WriteLine(p_teamsRegitered[i+1].Name + " a remporté " + p_teamsRegitered[i+1].NbWin + " matchs");
 			}
 
 		}

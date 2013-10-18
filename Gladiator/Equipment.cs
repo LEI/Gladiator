@@ -52,6 +52,16 @@ namespace Gladiator
 			}
 		}
 
+		private bool _used = false;
+		public bool Used 
+		{
+			get { return this._used; }
+			set { 
+
+								this._used = value;
+			 }
+		}
+
 
 	}
 }
