@@ -124,7 +124,6 @@ namespace Gladiator
 						result += this.Name + " est pris dans les mailles du filet \n";
 					}
 					if (Rand.NextDouble() < e.Offense / coef) {
-						//result = this.Name + " HIT " + p_adv.Name + "\n";
 						if (e is Net) {
 							p_adv.IsCapture = true;
 							result += "* " + this.Name + " capture " + p_adv.Name + "\n";
@@ -133,18 +132,15 @@ namespace Gladiator
 						result += "* " + this.Name + " touche " + p_adv.Name + "\n";
 						bool hit = p_adv.defend();
 						if (hit == true) {
-							//result+=" TOUCHED! \n";
 							result += " -> COUP MORTEL \n";
 			
 							p_adv.IsAlive = false;
 							p_adv.IsCapture = false;
 							this.IsCapture = false;
 						} else {
-							//result += p_adv.Name + " BLOCKED! \n";
 							result += " -> PARADE \n";
 						}
 					} else {
-						//result = "* " + this.Name + " MANQUE " + p_adv.Name;
 						result += "* " + this.Name + " manque " + p_adv.Name + "\n";
 					}
 				}

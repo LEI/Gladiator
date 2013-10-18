@@ -16,7 +16,6 @@ namespace Gladiator
 		public Game(params Player[] t_players)
 		{
 			TeamsRegistered = new List<Team>();
-			//  Si il n'y as que deux joueur et que l'un d'eux n'a pas d'equipe = PLANTAGE
 			// Vérification du nombre minimum de joueur
 			if (t_players.Length > 1) {
 				foreach (Player p in t_players) {

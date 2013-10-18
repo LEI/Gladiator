@@ -15,20 +15,38 @@ namespace Gladiator
 		public Fight(List<Team> p_teamsRegitered)
 		{
 			int i = 0;
+			// Tri des teams en fonction de leur ratio
 			while (i < p_teamsRegitered.Count-1)
 			{
-				// Tri des teams en fonction de leur ratio
 				if (p_teamsRegitered[i].ratio() < p_teamsRegitered[i + 1].ratio()) {
 					swapTeam(p_teamsRegitered, i, i + 1);
 					i = 0;
 				} else
 					i++;
 			}
+			// Affichage des équipes
+			Console.WriteLine("----- EQUIPES EN LICE -----");
+			foreach (Team t in p_teamsRegitered) {
+				Console.WriteLine("\n" + t.Name + " (" + t.NbWin + "/" + t.NbLose + ")\n");
+				foreach (Champion c in t.ChampList) {
+					Console.WriteLine("\t" + c.Name + " (" + c.NbWin + "/" + c.NbLose + ")");
+					foreach (Equipment e in c.ItemList) {
+						Console.WriteLine("\t\t" + e.Name + " (" + e.Priority + ")");
+					}
+				}
+			}
+			// Initialisation des duels et affichage des équipes
+			Team winner;
 			for (i=0; i < p_teamsRegitered.Count-1; i += 2) {
-				Console.WriteLine("\n----- MATCH : " + p_teamsRegitered[i].Name + "(" + p_teamsRegitered[i].NbWin + "/"+ p_teamsRegitered[i].NbLose + ") VS " + p_teamsRegitered[i+1].Name + "(" + p_teamsRegitered[i+1].NbWin + "/"+ p_teamsRegitered[i+1].NbLose + ") -----");
+				Console.WriteLine("\n----- MATCH : " + p_teamsRegitered[i].Name + " VS " + p_teamsRegitered[i+1].Name + " -----");
 				new Duel(p_teamsRegitered[i], p_teamsRegitered[i+1]);
-				Console.WriteLine(p_teamsRegitered[i].Name + " a remporté " + p_teamsRegitered[i].NbWin + " matchs");
-				Console.WriteLine(p_teamsRegitered[i+1].Name + " a remporté " + p_teamsRegitered[i+1].NbWin + " matchs");
+
+				if (p_teamsRegitered[i].NbWin > p_teamsRegitered[i+1].NbWin)
+					winner = p_teamsRegitered[i];
+				else
+					winner = p_teamsRegitered[i+1];
+
+				Console.WriteLine(winner.Name + " gagne avec " + winner.NbWin + " victoires");
 			}
 
 		}

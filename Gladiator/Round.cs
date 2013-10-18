@@ -32,12 +32,12 @@ namespace Gladiator
 			if (c1.IsAlive == false) {
 				c1.NbLose++;
 				c2.NbWin++;
-				Console.WriteLine(c1.Name + " est mort T_T (" + c1.NbWin + " - " + c1.NbLose + ")");
+				Console.WriteLine(c1.Name + " est mort "/*(" + c1.NbWin + " - " + c1.NbLose + ")"*/);
 			}
 			if (c2.IsAlive == false) {
 				c2.NbLose++;
 				c1.NbWin++;
-				Console.WriteLine(c2.Name + " c'est fait trucider T_T (" + c2.NbWin + " - " + c2.NbLose + ")");
+				Console.WriteLine(c2.Name + " est mort "/*(" + c2.NbWin + " - " + c2.NbLose + ")"*/);
 			}
 
 		}

@@ -28,12 +28,9 @@ namespace Gladiator
 			t4.NbLose = 3;
 
 			p1.addTeam(t1);
-			p3.addTeam(t3);
-
 			p2.addTeam(t2);
+			p3.addTeam(t3);
 			p4.addTeam(t4);
-
-
 
 			Champion c1 = new Champion("ONEA");
 			Champion c2 = new Champion("ONEB");
@@ -50,8 +47,6 @@ namespace Gladiator
 			Champion c10 = new Champion("QUATRA");
 			Champion c11 = new Champion("QUATRB");
 			Champion c12 = new Champion("QUATRC");
-
-
 
 			t1.addChampion(c1);
 			t1.addChampion(c2);
@@ -74,52 +69,44 @@ namespace Gladiator
 			Equipment filet = new Net();
 			Equipment filet2 = new Net();
 			Equipment filet3 = new Net();
-			Equipment filet4 = new Net();
-			Equipment filet5 = new Net();
-			Equipment filet6 = new Net();
-			Equipment filet7 = new Net();
-			Equipment filet8 = new Net();
-			Equipment filet9 = new Net();
 			Equipment trident = new Trident();
 			Equipment epee = new Sword();
 			Equipment lance = new Spear();
 			Equipment grandbouc = new RectangularShield();
 			Equipment ptitbouc = new SmallRoundedShield();
 
-			c1.addItem(filet);
+			c1.addItem(dague);
 			c1.addItem(epee);
 
-			c2.addItem(filet3);
+			c2.addItem(epee);
 			c2.addItem(ptitbouc);
 
-
 			c3.addItem(dague);
-			c3.addItem(filet4);
+			c3.addItem(filet);
 
-			c4.addItem(lance);
-			c4.addItem(casque);
+			c4.addItem(trident);
+			c4.addItem(dague);
 
 			c5.addItem(epee);
 			c5.addItem(ptitbouc);
 
-			c6.addItem(filet5);
+			c6.addItem(filet2);
 			c6.addItem(dague);
 
-			c7.addItem(filet6);
-			c7.addItem(dague);
+			c7.addItem(trident);
 			c7.addItem(casque);
 					   
-			c8.addItem(ptitbouc);
-			c8.addItem(filet7);
+			c8.addItem(casque);
+			c8.addItem(lance);
 					   
-			c9.addItem(filet8);
+			c9.addItem(filet3);
 			c9.addItem(dague);
 
+			c10.addItem(lance);
 			c10.addItem(dague);
-			c10.addItem(filet9);
 						
 			c11.addItem(dague);
-			c11.addItem(casque);
+			c11.addItem(grandbouc);
 						
 			c12.addItem(casque);
 			c12.addItem(ptitbouc);
