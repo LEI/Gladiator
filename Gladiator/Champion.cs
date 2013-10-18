@@ -107,12 +107,9 @@ namespace Gladiator
 			return alive;
 		}*/
 
-		public static List<Champion> attack(Champion p_champ1, Champion p_champ2)
+		public static List<Champion> attack(List<Champion> p_list)
 		{
 			List<Champion> deadList = new List<Champion>();
-			List<Champion> p_list = new List<Champion>();
-			p_list.Add(p_champ1);
-			p_list.Add(p_champ2);
 
 			foreach (Champion c in p_list) {
 				// Probabilité de toucher
