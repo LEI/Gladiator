@@ -50,6 +50,7 @@ namespace Gladiator
 
 		public void swapChampion(int index1, int index2)
 		{
+			// SWAP
 			Champion temp = this.ChampList[index1];
 			this.ChampList[index1] = this.ChampList[index2];
 			this.ChampList[index2] = temp;

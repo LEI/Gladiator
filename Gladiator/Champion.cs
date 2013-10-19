@@ -66,8 +66,9 @@ namespace Gladiator
 
 			if (p_itemList.Count > 1) {
 				while (i < p_itemList.Count - 1) {
-					// Tri des teams en fonction de leur ratio
+					// Tri des items
 					if (p_itemList[i].Priority < p_itemList[i + 1].Priority) {
+						//SortList.Swap<Equipment>(p_itemList, i, i+1);
 						Equipment temp = p_itemList[i];
 						p_itemList[i] = p_itemList[i + 1];
 						p_itemList[i + 1] = temp;
@@ -108,32 +109,34 @@ namespace Gladiator
 			                                 select b_equipement).ToList();
 
 				foreach (Equipment e in l_lstEquiPrio) {
-				// Probabilité de toucher
+				// Vérification de la priorité
 				if (e.Priority == p_priority) {
+					// Tests filet
 					if ( e is Net && e.Priority == 5 && e.Used == true) {
 						return result;
 					}
-
-					if ( e.Priority == 5 && e.Used == false) {
+					if (e is Net && e.Priority == 5 && e.Used == false) {
 						e.Used = true;
 					} 
-
 					result += this.Name + " utilise " + e.Name + " (" + e.Priority + ")\n";
+					// Test : champion capturé
 					if (this.IsCapture == true) {
 						coef = 2;
 						result += this.Name + " est pris dans les mailles du filet \n";
 					}
+					// Probabilité de toucher
 					if (Rand.NextDouble() < e.Offense / coef) {
+						// Capture avec filet
 						if (e is Net) {
 							p_adv.IsCapture = true;
 							result += "* " + this.Name + " capture " + p_adv.Name + "\n";
 							return result;
 						}
 						result += "* " + this.Name + " touche " + p_adv.Name + "\n";
+						// Test de la défense
 						bool hit = p_adv.defend();
 						if (hit == true) {
 							result += " -> COUP MORTEL \n";
-			
 							p_adv.IsAlive = false;
 							p_adv.IsCapture = false;
 							this.IsCapture = false;
@@ -145,6 +148,7 @@ namespace Gladiator
 					}
 				}
 			}
+
 			return result;
 		}
 
