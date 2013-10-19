@@ -33,13 +33,17 @@ namespace Gladiator
 
 		public void start()
 		{
+
 			new Fight(TeamsRegistered);
 
 			// Affichage de tous les champions morts
+			string name;
 			foreach (Team t in TeamsRegistered) {
 				foreach (Champion c in t.ChampList) {
+					name = c.Name;
 					if (c.IsAlive == false)
-						Console.WriteLine("✝ " + c.Name + "(" + t.Name + ")");
+						name += " ✝";
+					Console.Write(name + "\t(Team " + t.Name + ")\t" + c.NbWin + " kills\n");
 				}
 			}
 		}

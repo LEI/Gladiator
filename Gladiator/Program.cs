@@ -33,21 +33,21 @@ namespace Gladiator
 			p4.addTeam(t4);
 
 
-			Champion c1 = new Champion("ONEA");
-			Champion c2 = new Champion("ONEB");
-			Champion c3 = new Champion("ONEC");
+			Champion c1 = new Champion("AONE");
+			Champion c2 = new Champion("ADUO");
+			Champion c3 = new Champion("ATRI");
 
-			Champion c4 = new Champion("DEUA");
-			Champion c5 = new Champion("DEUB");
-			Champion c6 = new Champion("DEUC");
+			Champion c4 = new Champion("BONE");
+			Champion c5 = new Champion("BDUO");
+			Champion c6 = new Champion("BTRI");
 
-			Champion c7 = new Champion("TROIA");
-			Champion c8 = new Champion("TROIB");
-			Champion c9 = new Champion("TROIC");
+			Champion c7 = new Champion("CONE");
+			Champion c8 = new Champion("CDUO");
+			Champion c9 = new Champion("CTRI");
 
-			Champion c10 = new Champion("QUATA");
-			Champion c11 = new Champion("QUATB");
-			Champion c12 = new Champion("QUATC");
+			Champion c10 = new Champion("DONE");
+			Champion c11 = new Champion("DUOD");
+			Champion c12 = new Champion("DTRI");
 
 			t1.addChampion(c1);
 			t1.addChampion(c2);
