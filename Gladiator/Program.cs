@@ -18,14 +18,14 @@ namespace Gladiator
 			Team t3 = new Team("Cye", "lol");
 			Team t4 = new Team("Dye", "lol");
 
-			t1.NbWin = 6;
+			/*t1.NbWin = 6;
 			t1.NbLose = 3;
 			t2.NbWin = 8;
 			t2.NbLose = 3;
 			t3.NbWin = 10;
 			t3.NbLose = 3;
 			t4.NbWin = 2;
-			t4.NbLose = 3;
+			t4.NbLose = 3;*/
 
 			p1.addTeam(t1);
 			p2.addTeam(t2);

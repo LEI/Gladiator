@@ -34,6 +34,14 @@ namespace Gladiator
 		public void start()
 		{
 			new Fight(TeamsRegistered);
+
+			// Affichage de tous les champions morts
+			foreach (Team t in TeamsRegistered) {
+				foreach (Champion c in t.ChampList) {
+					if (c.IsAlive == false)
+						Console.WriteLine("✝ " + c.Name + "(" + t.Name + ")");
+				}
+			}
 		}
 	}
 }

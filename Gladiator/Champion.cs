@@ -88,8 +88,9 @@ namespace Gladiator
 				this.StuffWeight += p_item.Weight;
 				// Tri par priorité
 				sortItems(this.ItemList);
+				Console.WriteLine (this.Name + " équipe " + p_item.Name + " (" + p_item.Weight + "), " + (10 - this.StuffWeight) + " points restant");
 			} else
-				Console.WriteLine (this.Name + " ne peut pas porter l'équipement " + p_item.Name + ", " + (10 - this.StuffWeight) + " points restant");
+				Console.WriteLine (this.Name + " ne peut pas équiper " + p_item.Name + " (" + p_item.Weight + "), " + (10 - this.StuffWeight) + " points restant");
 		}
 
 		public void deleteItem(Equipment p_item)
@@ -117,34 +118,34 @@ namespace Gladiator
 					}
 					if (e is Net && e.Priority == 5 && e.Used == false) {
 						e.Used = true;
-					} 
-					result += this.Name + " utilise " + e.Name + " (" + e.Priority + ")\n";
+					}
 					// Test : champion capturé
+					string l_name = this.Name;
 					if (this.IsCapture == true) {
 						coef = 2;
-						result += this.Name + " est pris dans les mailles du filet \n";
+						l_name = "{" + l_name + "}";
 					}
+					result += l_name + " utilise " + e.Name/* + " (" + e.Priority + ")\n"*/;
 					// Probabilité de toucher
 					if (Rand.NextDouble() < e.Offense / coef) {
 						// Capture avec filet
 						if (e is Net) {
 							p_adv.IsCapture = true;
-							result += "* " + this.Name + " capture " + p_adv.Name + "\n";
+							result += " et " + this.Name + " capture {" + p_adv.Name + "}\n";
 							return result;
 						}
-						result += "* " + this.Name + " touche " + p_adv.Name + "\n";
+						result += " et touche " + p_adv.Name;
 						// Test de la défense
 						bool hit = p_adv.defend();
 						if (hit == true) {
 							result += " -> COUP MORTEL \n";
 							p_adv.IsAlive = false;
-							p_adv.IsCapture = false;
 							this.IsCapture = false;
 						} else {
 							result += " -> PARADE \n";
 						}
 					} else {
-						result += "* " + this.Name + " manque " + p_adv.Name + "\n";
+						result += " et manque " + p_adv.Name + "\n";
 					}
 				}
 			}

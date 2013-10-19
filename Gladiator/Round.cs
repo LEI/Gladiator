@@ -14,26 +14,29 @@ namespace Gladiator
 
 				for (int priority = 5; priority >= 1 & c1.IsAlive & c2.IsAlive ; priority--) {
 
-
 					result1 = c1.attack(c2, priority);	
 					result2 = c2.attack(c1, priority);
 
+					/*if (result1 != null || result2 != null)
+						Console.WriteLine("Attaque de rang " + priority + "\n");*/
+
+					// Affichage de résultat des combats
 					if (result1 != null)
-					Console.WriteLine(result1);
+						Console.WriteLine(result1);
 					if (result2 != null)
-					Console.WriteLine(result2);
+						Console.WriteLine(result2);
 				}
 			}
 
 			if (c1.IsAlive == false) {
 				c1.NbLose++;
 				c2.NbWin++;
-				Console.WriteLine(c1.Name + " est mort "/*(" + c1.NbWin + " - " + c1.NbLose + ")"*/);
+				//Console.WriteLine(c1.Name + " est mort "/*(" + c1.NbWin + " - " + c1.NbLose + ")"*/);
 			}
 			if (c2.IsAlive == false) {
 				c2.NbLose++;
 				c1.NbWin++;
-				Console.WriteLine(c2.Name + " est mort "/*(" + c2.NbWin + " - " + c2.NbLose + ")"*/);
+				//Console.WriteLine(c2.Name + " est mort "/*(" + c2.NbWin + " - " + c2.NbLose + ")"*/);
 			}
 
 		}

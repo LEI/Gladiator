@@ -29,9 +29,10 @@ namespace Gladiator
 				}
 			}
 			// Initialisation des duels et affichage des équipes
+			// !!!! Tournoi ? -> générer d'autres matchs ?
 			Team winner;
 			for (i=0; i < p_teamsRegistered.Count-1; i += 2) {
-				Console.WriteLine("\n----- MATCH : " + p_teamsRegistered[i].Name + " VS " + p_teamsRegistered[i+1].Name + " -----");
+				Console.WriteLine("\n---------- MATCH : " + p_teamsRegistered[i].Name + " VS " + p_teamsRegistered[i+1].Name + " ----------");
 				new Duel(p_teamsRegistered[i], p_teamsRegistered[i+1]);
 
 				if (p_teamsRegistered[i].NbWin > p_teamsRegistered[i+1].NbWin)
@@ -39,7 +40,8 @@ namespace Gladiator
 				else
 					winner = p_teamsRegistered[i+1];
 
-				Console.WriteLine(winner.Name + " gagne avec " + winner.NbWin + " victoires");
+				// !!!!! Calculer le nombre de victoires pendant l'exécution pour afficher les vainqueurs
+				//Console.WriteLine("\n" + winner.Name + " gagne avec " + winner.NbWin + " victoires");
 			}
 
 		}
