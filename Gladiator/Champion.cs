@@ -21,6 +21,7 @@ namespace Gladiator
 				if (this.IsCapture == true) {
 					return "{" + this._name + "}";
 				}
+
 				return this._name;
 			}
 			set { this._name = value; }
@@ -29,10 +30,12 @@ namespace Gladiator
 		private List<Equipment> _itemList = new List<Equipment>();
 		public List<Equipment> ItemList
 		{
-			get { return this._itemList; }
-			set { 
-				// Ordre des items
-				this._itemList = value; }
+			get {
+				// Tri par priorité (déjà exécuté à chaque addItem)
+				//sortItems(this._itemList);
+				return this._itemList;
+			}
+			set { this._itemList = value; }
 		}
 
 		private bool _isAlive = true;
@@ -61,10 +64,9 @@ namespace Gladiator
 		public void sortItems(List<Equipment> p_itemList)
 		{
 			int i = 0;
-
 			if (p_itemList.Count > 1) {
 				while (i < p_itemList.Count - 1) {
-					// Tri des items
+					// Tri de l'équipement par priorité
 					if (p_itemList[i].Priority < p_itemList[i + 1].Priority) {
 						SortList.Swap<Equipment>(p_itemList, i, i+1);
 						i = 0;
@@ -82,7 +84,7 @@ namespace Gladiator
 				this.ItemList.Add(p_item);
 				this.StuffWeight += p_item.Weight;
 				// Tri par priorité
-				sortItems(this.ItemList);
+				sortItems(this._itemList);
 			} else
 				Console.WriteLine(this.Name + " ne peut pas équiper " + p_item.Name + " (" + p_item.Weight + "), " + (10 - this.StuffWeight) + " points restant");
 		}
@@ -107,10 +109,10 @@ namespace Gladiator
 				// Vérification de la priorité
 				if (e.Priority == p_priority) {
 					// Tests filet
-					if ( e is Net && e.Priority == 5 && e.Used == true) {
+					if ( e is Net && e.Used == true) {
 						return result;
 					}
-					if (e is Net && e.Priority == 5 && e.Used == false) {
+					if (e is Net && e.Used == false) {
 						e.Used = true;
 					}
 					// Test : champion capturé
