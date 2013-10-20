@@ -17,7 +17,12 @@ namespace Gladiator
 		private string _name;
 		public string Name
 		{
-			get { return this._name; }
+			get { 
+				if (this.IsCapture == true) {
+					return "{" + this._name + "}";
+				}
+				return this._name;
+			}
 			set { this._name = value; }
 		}
 
@@ -53,13 +58,6 @@ namespace Gladiator
 			this.Name = p_name;
 		}
 
-		// Deuxieme constructeur : nom et liste d'items
-		public Champion(string p_name, List<Equipment> p_itemList)
-		{
-			this.Name = p_name;
-			this.ItemList = p_itemList;
-		}
-
 		public void sortItems(List<Equipment> p_itemList)
 		{
 			int i = 0;
@@ -68,10 +66,7 @@ namespace Gladiator
 				while (i < p_itemList.Count - 1) {
 					// Tri des items
 					if (p_itemList[i].Priority < p_itemList[i + 1].Priority) {
-						//SortList.Swap<Equipment>(p_itemList, i, i+1);
-						Equipment temp = p_itemList[i];
-						p_itemList[i] = p_itemList[i + 1];
-						p_itemList[i + 1] = temp;
+						SortList.Swap<Equipment>(p_itemList, i, i+1);
 						i = 0;
 					} else {
 						i++;
@@ -88,28 +83,27 @@ namespace Gladiator
 				this.StuffWeight += p_item.Weight;
 				// Tri par priorité
 				sortItems(this.ItemList);
-				Console.WriteLine (this.Name + " équipe " + p_item.Name + " (" + p_item.Weight + "), " + (10 - this.StuffWeight) + " points restant");
 			} else
-				Console.WriteLine (this.Name + " ne peut pas équiper " + p_item.Name + " (" + p_item.Weight + "), " + (10 - this.StuffWeight) + " points restant");
+				Console.WriteLine(this.Name + " ne peut pas équiper " + p_item.Name + " (" + p_item.Weight + "), " + (10 - this.StuffWeight) + " points restant");
 		}
 
 		public void deleteItem(Equipment p_item)
 		{
 			this.StuffWeight -= p_item.Weight;
 			this.ItemList.Remove(p_item);
-			Console.WriteLine (this.Name + " jette l'équipement " + p_item.Name + ", " + (10 - this.StuffWeight) + " points restant");
+			Console.WriteLine(this.Name + " jette l'équipement " + p_item.Name + ", " + (10 - this.StuffWeight) + " points restant");
 		}
 
 		public string attack(Champion p_adv, int p_priority)
 		{
 			string result = null;
 			int coef = 1;
-
+			// Création de la liste des équipements de la priorité du round
 			List<Equipment> l_lstEquiPrio = (from b_equipement in this.ItemList
 			                                 where b_equipement.Priority == p_priority
 			                                 select b_equipement).ToList();
 
-				foreach (Equipment e in l_lstEquiPrio) {
+			foreach (Equipment e in l_lstEquiPrio) {
 				// Vérification de la priorité
 				if (e.Priority == p_priority) {
 					// Tests filet
@@ -120,18 +114,16 @@ namespace Gladiator
 						e.Used = true;
 					}
 					// Test : champion capturé
-					string l_name = this.Name;
 					if (this.IsCapture == true) {
 						coef = 2;
-						l_name = "{" + l_name + "}";
 					}
-					result += l_name + " utilise " + e.Name/* + " (" + e.Priority + ")\n"*/;
+					result += this.Name + " utilise " + e.Name/* + " (" + e.Priority + ")\n"*/;
 					// Probabilité de toucher
 					if (Rand.NextDouble() < e.Offense / coef) {
 						// Capture avec filet
 						if (e is Net) {
 							p_adv.IsCapture = true;
-							result += " et " + this.Name + " capture {" + p_adv.Name + "}\n";
+							result += " et capture " + p_adv.Name + "\n";
 							return result;
 						}
 						result += " et touche " + p_adv.Name;
@@ -192,7 +184,7 @@ namespace Gladiator
 
 		public double ratio()
 		{
-			return (this.NbWin * 100 / (this.NbLose + this.NbWin + this.NbDraw));
+			return (this.NbWin * 100 / (this.NbLose + this.NbWin));
 		}
 	}
 }

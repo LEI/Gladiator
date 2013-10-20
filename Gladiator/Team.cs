@@ -27,7 +27,6 @@ namespace Gladiator
 			set { this._champList = value; }
 		}
 
-
 		public Team(string p_name, string p_description)
 		{
 			this.Name = p_name;
@@ -87,15 +86,20 @@ namespace Gladiator
 
 		public double ratio()
 		{
-			if (this.NbMatch() != 0) {
+			if (this.NbTotal() != 0) {
 				return (this.NbWin * 100 / (this.NbLose + this.NbWin));
 			} else
 				return 0;
 		}
 
-		public int NbMatch()
+		public int NbTotal()
 		{
-			return (this.NbWin + this.NbLose + this.NbDraw);
+			return (this.NbWin + this.NbLose);
+		}
+
+		public int NbCurrent()
+		{
+			return (this.NbWin + this.NbLose);
 		}
 	}
 }

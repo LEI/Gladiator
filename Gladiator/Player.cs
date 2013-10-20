@@ -5,6 +5,8 @@ namespace Gladiator
 {
 	public class Player
 	{
+		private static int MAX_TEAM = 5;
+
 		private string _name;
 		public string Name
 		{
@@ -59,10 +61,11 @@ namespace Gladiator
 
 		public void addTeam(Team p_team)
 		{
-			if (this.TeamList.Count < 5)
+			// Vérification du nombre d'équipes
+			if (this.TeamList.Count < MAX_TEAM)
 				this.TeamList.Add(p_team);
 			else
-				throw new Exception("5 équipes maximum");
+				throw new Exception(MAX_TEAM + " équipes maximum");
 		}
 
 		public void deleteTeam(Team p_team)

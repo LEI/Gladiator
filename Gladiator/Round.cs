@@ -13,19 +13,24 @@ namespace Gladiator
 			while(c1.IsAlive & c2.IsAlive ) {
 
 				for (int priority = 5; priority >= 1 & c1.IsAlive & c2.IsAlive ; priority--) {
-
+					// Combat de même priorité
 					result1 = c1.attack(c2, priority);	
 					result2 = c2.attack(c1, priority);
-
 					/*if (result1 != null || result2 != null)
 						Console.WriteLine("Attaque de rang " + priority + "\n");*/
-
-					// Affichage de résultat des combats
-					if (result1 != null)
+					// Affichage du résultat du combat
+					if (result1 != null) {
+						Console.ForegroundColor = ConsoleColor.Red;
 						Console.WriteLine(result1);
-					if (result2 != null)
+						Console.ResetColor();
+					}
+					if (result2 != null) {
+						Console.ForegroundColor = ConsoleColor.Yellow;
 						Console.WriteLine(result2);
+						Console.ResetColor();
+					}
 				}
+
 			}
 
 			if (c1.IsAlive == false) {
@@ -38,7 +43,6 @@ namespace Gladiator
 				c1.NbWin++;
 				//Console.WriteLine(c2.Name + " est mort ");
 			}
-
 		}
 	}
 }
