@@ -26,7 +26,7 @@ namespace Gladiator
 			t3.NbLose = 3;
 			t4.NbWin = 2;
 			t4.NbLose = 3;
-			
+
 			p1.addTeam(t1);
 			p2.addTeam(t2);
 			p3.addTeam(t3);
@@ -95,23 +95,23 @@ namespace Gladiator
 
 			c7.addItem(trident);
 			c7.addItem(casque);
-					   
+
 			c8.addItem(casque);
 			c8.addItem(lance);
-					   
+
 			c9.addItem(filet3);
 			c9.addItem(dague);
 
 			c10.addItem(lance);
 			c10.addItem(dague);
-						
+
 			c11.addItem(dague);
 			c11.addItem(bouclierRect);
-						
+
 			c12.addItem(casque);
 			c12.addItem(bouclierRond);
 
-			// Modification de l'ordre des champions :
+			// Modification de l'ordre des champions
 			//SortList.Swap<Champion>(t1.ChampList, 1, 2);
 
 			Game newGame = new Game(p1, p2, p3);
