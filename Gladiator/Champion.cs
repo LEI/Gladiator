@@ -19,7 +19,7 @@ namespace Gladiator
 		{
 			get { 
 				if (this.IsCapture == true) {
-					return "{" + this._name + "}";
+					return "#" + this._name + "#";
 				}
 
 				return this._name;
