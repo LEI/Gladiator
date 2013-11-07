@@ -5,7 +5,6 @@ namespace Gladiator
 {
 	public class Game
 	{
-
 		private List<Team> _teamsRegistered;
 		public List<Team> TeamsRegistered
 		{
@@ -16,7 +15,6 @@ namespace Gladiator
 		public Game(params Player[] t_players)
 		{
 			TeamsRegistered = new List<Team>();
-			//  Si il n'y as que deux joueur et que l'un d'eux n'a pas d'equipe = PLANTAGE
 			// Vérification du nombre minimum de joueur
 			if (t_players.Length > 1) {
 				foreach (Player p in t_players) {
@@ -34,7 +32,20 @@ namespace Gladiator
 
 		public void start()
 		{
+
 			new Fight(TeamsRegistered);
+
+			// Affichage de tous les champions morts
+			Console.WriteLine("Champion - Equipe - Tués\n");
+			string name;
+			foreach (Team t in TeamsRegistered) {
+				foreach (Champion c in t.ChampList) {
+					name = c.Name;
+					if (c.IsAlive == false)
+						name += " ✝";
+					Console.Write(name + "\t" + t.Name + "\t" + c.NbWin + "\n");
+				}
+			}
 		}
 	}
 }
