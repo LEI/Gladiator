@@ -38,13 +38,7 @@ namespace Gladiator
                 if (currentDuel.StillAlive != null)
                 {
                     winners.Add(currentDuel.StillAlive);
-                }
-				/*if (p_teamsRegistered[i].NbWin > p_teamsRegistered[i+1].NbWin)
-					winner = p_teamsRegistered[i];
-				else
-					winner = p_teamsRegistered[i+1];
-				*/
-				
+                }			
 				
 
 				// !!!!! Calculer le nombre de victoires pendant l'exécution pour afficher les vainqueurs
