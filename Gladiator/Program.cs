@@ -69,6 +69,8 @@ namespace Gladiator
 			Equipment filet = new Net();
 			Equipment filet2 = new Net();
 			Equipment filet3 = new Net();
+            Equipment filet4 = new Net();
+            Equipment filet5 = new Net();
 			Equipment trident = new Trident();
 			Equipment epee = new Sword();
 			Equipment lance = new Spear();
@@ -78,7 +80,7 @@ namespace Gladiator
 			c1.addItem(dague);
 			c1.addItem(epee);
 
-			c2.addItem(epee);
+			c2.addItem(filet4);
 			c2.addItem(bouclierRond);
 
 			c3.addItem(dague);
@@ -96,7 +98,7 @@ namespace Gladiator
 			c7.addItem(trident);
 			c7.addItem(casque);
 
-			c8.addItem(casque);
+			c8.addItem(filet5);
 			c8.addItem(lance);
 
 			c9.addItem(filet3);
