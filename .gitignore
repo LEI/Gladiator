@@ -2,6 +2,10 @@ Gladiator/obj/x86/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
 
 Gladiator/bin/Debug/Gladiator.exe.mdb
 
+Gladiator/bin/Debug/Gladiator.vshost.exe
+
+Gladiator/bin/Debug/Gladiator.vshost.exe.manifest
+
 Gladiator/obj/x86/Debug/Gladiator.csproj.FilesWrittenAbsolute.txt
 
 Gladiator/bin/Debug/Gladiator.exe
@@ -9,7 +13,5 @@ Gladiator/bin/Debug/Gladiator.exe
 Gladiator/obj/x86/Debug/Gladiator.exe
 
 Gladiator/obj/x86/Debug/Gladiator.exe.mdb
-<<<<<<< HEAD
-Gladiator.userprefs
-=======
->>>>>>> 62a3c063aaed843b807c3113ae19ca47249b1ef0
+
+Gladiator/obj/x86/Debug/DesignTimeResolveAssemblyReferencesInput.cache
