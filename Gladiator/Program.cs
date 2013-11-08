@@ -116,7 +116,7 @@ namespace Gladiator
 
 			Game newGame = new Game(p1, p2, p3, p4);
 			newGame.start();
-            Console.WriteLine("FIN");
+
             Console.ReadKey();
       
 		}

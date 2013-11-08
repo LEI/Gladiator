@@ -106,10 +106,9 @@ namespace Gladiator
 			                                 select b_equipement).ToList();
 
 			foreach (Equipment e in l_lstEquiPrio) {
-                Equipment currentEquipment = e;
 				// Vérification de la priorité
-				if (currentEquipment.Priority == p_priority) {
-					
+				if (e.Priority == p_priority) {
+
 					if ( e is Net && e.Used == true) {
 						return result;
 					}
@@ -128,6 +127,7 @@ namespace Gladiator
 						if (e is Net) {
 							p_adv.IsCapture = true;
 							result += " et capture " + p_adv.Name + "\n";
+
 							return result;
 						}
 						result += " et touche " + p_adv.Name;
@@ -145,10 +145,6 @@ namespace Gladiator
 					}
 				}
 			}
-
-
-
-
 
 			return result;
 		}
