@@ -95,26 +95,26 @@ namespace Gladiator
 			this.ItemList.Remove(p_item);
 			Console.WriteLine(this.Name + " jette l'équipement " + p_item.Name + ", " + (10 - this.StuffWeight) + " points restant");
 		}
-
 		public string attack(Champion p_adv, int p_priority)
 		{
 			string result = null;
 			int coef = 1;
+
 			// Création de la liste des équipements de la priorité du round
 			List<Equipment> l_lstEquiPrio = (from b_equipement in this.ItemList
 			                                 where b_equipement.Priority == p_priority
 			                                 select b_equipement).ToList();
 
 			foreach (Equipment e in l_lstEquiPrio) {
+                Equipment currentEquipment = e;
 				// Vérification de la priorité
-				if (e.Priority == p_priority) {
-					// Tests filet
-					if ( e is Net && e.Used == true) {
-						return result;
-					}
-					if (e is Net && e.Used == false) {
-						e.Used = true;
-					}
+				if (currentEquipment.Priority == p_priority) {
+
+                    /*if (e is Net)
+                    {
+                        testFilet(e);
+                    }*/
+
 					// Test : champion capturé
 					if (this.IsCapture == true) {
 						coef = 2;
@@ -144,8 +144,13 @@ namespace Gladiator
 				}
 			}
 
+
+
+
+
 			return result;
 		}
+
 
 		public bool defend()
 		{
