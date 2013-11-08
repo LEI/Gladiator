@@ -30,15 +30,21 @@ namespace Gladiator
 			}
 			// Initialisation des duels et affichage des équipes
 			// !!!! Tournoi ? -> générer d'autres matchs ?
-			Team winner;
+			List<Team> winners = new List<Team>();
 			for (i=0; i < p_teamsRegistered.Count-1; i += 2) {
 				Console.WriteLine("\n---------- MATCH : " + p_teamsRegistered[i].Name + " VS " + p_teamsRegistered[i+1].Name + " ----------");
-				new Duel(p_teamsRegistered[i], p_teamsRegistered[i+1]);
+				//Team winner = new Duel(p_teamsRegistered[i], p_teamsRegistered[i + 1]);
+				//winners.Add(winner);
 
-				if (p_teamsRegistered[i].NbWin > p_teamsRegistered[i+1].NbWin)
+				/*if (p_teamsRegistered[i].NbWin > p_teamsRegistered[i+1].NbWin)
 					winner = p_teamsRegistered[i];
 				else
 					winner = p_teamsRegistered[i+1];
+				*/
+				
+				foreach (Team t in winners) {
+					Console.WriteLine("winner: " + t.Name);
+				}
 
 				// !!!!! Calculer le nombre de victoires pendant l'exécution pour afficher les vainqueurs
 				//Console.WriteLine("\n" + winner.Name + " gagne avec " + winner.NbWin + " victoires");

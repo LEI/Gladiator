@@ -98,7 +98,6 @@ namespace Gladiator
 
 			c8.addItem(casque);
 			c8.addItem(lance);
-			c8.addItem(epee);
 
 			c9.addItem(filet3);
 			c9.addItem(dague);
