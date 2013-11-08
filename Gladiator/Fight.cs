@@ -35,22 +35,25 @@ namespace Gladiator
 			for (i=0; i < p_teamsRegistered.Count-1; i += 2) {
 				Console.WriteLine("\n---------- MATCH : " + p_teamsRegistered[i].Name + " VS " + p_teamsRegistered[i+1].Name + " ----------");
 				currentDuel = new Duel(p_teamsRegistered[i], p_teamsRegistered[i + 1]);
-				winners.Add(currentDuel.winners.StillAlive);
-
+                if (currentDuel.StillAlive != null)
+                {
+                    winners.Add(currentDuel.StillAlive);
+                }
 				/*if (p_teamsRegistered[i].NbWin > p_teamsRegistered[i+1].NbWin)
 					winner = p_teamsRegistered[i];
 				else
 					winner = p_teamsRegistered[i+1];
 				*/
 				
-				foreach (Team t in winners) {
-					Console.WriteLine("winner: " + t.Name);
-				}
+				
 
 				// !!!!! Calculer le nombre de victoires pendant l'exécution pour afficher les vainqueurs
 				//Console.WriteLine("\n" + winner.Name + " gagne avec " + winner.NbWin + " victoires");
 			}
-
+            foreach (Team t in winners)
+            {
+                Console.WriteLine("winner: " + t.Name);
+            }
 		}
 	}
 }

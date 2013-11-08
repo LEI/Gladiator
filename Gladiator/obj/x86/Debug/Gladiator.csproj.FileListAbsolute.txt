@@ -1,0 +1,5 @@
+C:\Users\Save92\Documents\GitHub\Gladiator\Gladiator\obj\x86\Debug\Gladiator.csprojResolveAssemblyReference.cache
+C:\Users\Save92\Documents\GitHub\Gladiator\Gladiator\bin\Debug\Gladiator.exe
+C:\Users\Save92\Documents\GitHub\Gladiator\Gladiator\bin\Debug\Gladiator.pdb
+C:\Users\Save92\Documents\GitHub\Gladiator\Gladiator\obj\x86\Debug\Gladiator.exe
+C:\Users\Save92\Documents\GitHub\Gladiator\Gladiator\obj\x86\Debug\Gladiator.pdb

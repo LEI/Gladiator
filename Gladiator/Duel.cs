@@ -20,8 +20,8 @@ namespace Gladiator
 			set { this._champion2 = value; }
 		}
 
-        private List<Team> _lstStillALive;
-        public List<Team> StillAlive
+        private Team _lstStillALive;
+        public Team StillAlive
         {
             get { return this._lstStillALive; }
             set { this._lstStillALive = value; }
@@ -42,14 +42,15 @@ namespace Gladiator
 				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
 			}
 			if (i > j) {
-                StillAlive.Add(t2);
+                StillAlive = t2;
 				t2.NbWin++;
 				t1.NbLose++;
 			} else if (i < j) {
-                StillAlive.Add(t1);
+                StillAlive = t1;
 				t1.NbWin++;
 				t2.NbLose++;
 			} else if (i == j) {
+                Console.WriteLine("Les deux sont morts !!");
 				t1.NbDraw++;
 				t2.NbDraw++;
 			}

@@ -114,8 +114,11 @@ namespace Gladiator
 			// Modification de l'ordre des champions
 			//SortList.Swap<Champion>(t1.ChampList, 1, 2);
 
-			Game newGame = new Game(p1, p2, p3);
+			Game newGame = new Game(p1, p2, p3, p4);
 			newGame.start();
+            Console.WriteLine("FIN");
+            Console.ReadKey();
+      
 		}
 	}
 }
