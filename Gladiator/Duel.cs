@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Gladiator
 {
@@ -19,6 +20,13 @@ namespace Gladiator
 			set { this._champion2 = value; }
 		}
 
+        private List<Team> _lstStillALive;
+        public List<Team> StillAlive
+        {
+            get { return this._lstStillALive; }
+            set { this._lstStillALive = value; }
+        }
+
 		public Duel(Team t1, Team t2)
 		{
 			int i = 0, j = 0, nbRound = 1;
@@ -34,9 +42,11 @@ namespace Gladiator
 				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
 			}
 			if (i > j) {
+                StillAlive.Add(t2);
 				t2.NbWin++;
 				t1.NbLose++;
 			} else if (i < j) {
+                StillAlive.Add(t1);
 				t1.NbWin++;
 				t2.NbLose++;
 			} else if (i == j) {
