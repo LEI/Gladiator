@@ -42,15 +42,17 @@ namespace Gladiator
 				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
 			}
 			if (i > j) {
+				Console.WriteLine(t2.Name + " gagne le duel contre "+ t1.Name);
                 StillAlive = t2;
 				t2.NbWin++;
 				t1.NbLose++;
 			} else if (i < j) {
+				Console.WriteLine(t1.Name + " perd le duel contre " + t2.Name);
                 StillAlive = t1;
 				t1.NbWin++;
 				t2.NbLose++;
 			} else if (i == j) {
-                Console.WriteLine("Les deux sont morts !!");
+                Console.WriteLine("Egalité entre " + t1.Name + " et " + t2.Name);
 				t1.NbDraw++;
 				t2.NbDraw++;
 			}

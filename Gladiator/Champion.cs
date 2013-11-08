@@ -109,11 +109,13 @@ namespace Gladiator
                 Equipment currentEquipment = e;
 				// Vérification de la priorité
 				if (currentEquipment.Priority == p_priority) {
-
-                    /*if (e is Net)
-                    {
-                        testFilet(e);
-                    }*/
+					
+					if ( e is Net && e.Used == true) {
+						return result;
+					}
+					if (e is Net && e.Used == false) {
+						e.Used = true;
+					}
 
 					// Test : champion capturé
 					if (this.IsCapture == true) {

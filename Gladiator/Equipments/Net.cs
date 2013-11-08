@@ -14,16 +14,6 @@ namespace Gladiator.Equipments
 			this.Priority = 5;
 			this.Used = false;
 		}
-               /* public Equipement testFilet(currentEquipment)
-        {
-                         // Tests filet
-                   if ( currentEquipment is Net && currentEquipment.Used == true) {
-						return result;
-					}
-					if (e is Net && currentEquipment.Used == false) {
-						e.Used = true;
-					}
-        }*/
 	}
 }
 

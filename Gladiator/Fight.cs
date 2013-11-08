@@ -12,12 +12,15 @@ namespace Gladiator
 			// Initialisation des duels et affichage des équipes
 			// !!!! Tournoi ? -> générer d'autres matchs ?
 
+			// Premier duel
 			List<Team> stillAlive = initDuels(teamsRegistered);
-
+			// Relance duel tant qu'il reste plus d'une équipe
 			while (stillAlive.Count > 1) {
 				stillAlive = initDuels(stillAlive);
 			}
 
+			Console.WriteLine("ALLO");
+			// Affichage des équipes restantes
 			foreach (Team t in stillAlive)
 			{
 				Console.WriteLine("winner: " + t.Name);
@@ -53,6 +56,7 @@ namespace Gladiator
 				// !!!!! Calculer le nombre de victoires pendant l'exécution pour afficher les vainqueurs
 				//Console.WriteLine("\n" + winner.Name + " gagne avec " + winner.NbWin + " victoires");
 			}
+			// Retourne la liste des équipes vivantes après la série de duels
 			return winners;
 		}
 
