@@ -128,20 +128,27 @@ namespace Gladiator
 						if (e is Net) {
 							p_adv.IsCapture = true;
 							result += " et capture " + p_adv.Name + "\n";
+                            p_adv.IsAlive = true;
 							return result;
 						}
 						result += " et touche " + p_adv.Name;
+                        p_adv.IsAlive = true;
 						// Test de la défense
 						bool hit = p_adv.defend();
 						if (hit == true) {
 							result += " -> COUP MORTEL \n";
 							p_adv.IsAlive = false;
 							this.IsCapture = false;
+                            return result;
 						} else {
 							result += " -> PARADE \n";
+                            p_adv.IsAlive = true;
+                            return result;
 						}
 					} else {
 						result += " et manque " + p_adv.Name + "\n";
+                        p_adv.IsAlive = true;
+                        return result;
 					}
 				}
 			}
@@ -162,7 +169,7 @@ namespace Gladiator
 				if (e is IDefense) {
 					// Probabilité de parer
 					if (this.Rand.NextDouble() < e.Defense) {
-						return hit = false;
+						return false;
 					}
 				}
 			}
