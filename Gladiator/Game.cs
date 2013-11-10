@@ -29,11 +29,11 @@ namespace Gladiator
 					if (p.TeamList.Count > 0) {
 						TeamsRegistered.Add(p.TeamList[0]);
 					} else {
-						this.Result = "Le joueur " + p.Alias + " n'a aucune d'équipe";
+						Console.WriteLine("Le joueur " + p.Alias + " n'a aucune d'équipe");
 					}
 				}
 			} else {
-				this.Result = "Minimum 2 joueurs";
+				Console.WriteLine("Minimum 2 joueurs");
 			}
 		}
 
@@ -46,18 +46,6 @@ namespace Gladiator
 			foreach (Team t in currentFight.LstStillAlive)
 			{
 				Console.WriteLine("Winner: " + t.Name);
-			}
-
-			// Affichage de tous les champions morts
-			Console.WriteLine("Champion - Equipe - Tués\n");
-			string name;
-			foreach (Team t in TeamsRegistered) {
-				foreach (Champion c in t.ChampList) {
-					name = c.Name;
-					if (c.IsAlive == false)
-						name += "*";
-					Console.Write(name + "\t" + t.Name + "\t" + c.NbWin + "\n");
-				}
 			}
 		}
 	}
