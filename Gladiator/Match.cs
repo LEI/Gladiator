@@ -5,6 +5,12 @@ namespace Gladiator
 {
 	public class Match
 	{
+		private string _resultMatch;
+		public string ResultMatch
+		{
+			get { return this._resultMatch; }
+			set { this._resultMatch = value; }
+		}
 
         private Team _lstStillALive;
         public Team StillAlive
@@ -20,20 +26,12 @@ namespace Gladiator
 
 			int i = 0, j = 0, nbRound = 1;
 			while (t1.ChampList[2].IsAlive && t2.ChampList[2].IsAlive && i <= 3 && j <= 3) {
-				Console.WriteLine("\n----- ROUND " + nbRound + " - " + t1.ChampList[i].Name + " vs " + t2.ChampList[j].Name + " -----\n");
+				ResultMatch += "\n----- ROUND " + nbRound + " - " + t1.ChampList[i].Name + " vs " + t2.ChampList[j].Name + " -----\n";
                 if (t1.ChampList[i].IsAlive && t2.ChampList[j].IsAlive)
                 {
 					currentRound = new Round(t1.ChampList[i], t2.ChampList[j]);
-					Console.WriteLine(currentRound.Result);
+					ResultMatch += currentRound.Result;
                     nbRound++;
-                }
-                else if (!t1.ChampList[i].IsAlive )
-                { 
-                    Console.WriteLine(t1.ChampList[i].Name + " est déjà mort !");
-                }
-                else if (!t2.ChampList[j].IsAlive)
-                {
-                    Console.WriteLine(t2.ChampList[j].Name + " est déjà mort !");
                 }
 				
                 if (!t1.ChampList[i].IsAlive)
@@ -44,17 +42,17 @@ namespace Gladiator
 				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
 			}
 			if (i > j) {
-				Console.WriteLine(t2.Name + " gagne le match contre " + t1.Name);
+				ResultMatch += t2.Name + " gagne le match contre " + t1.Name;
                 StillAlive = t2;
 				t2.NbWin++;
 				t1.NbLose++;
 			} else if (i < j) {
-				Console.WriteLine(t1.Name + " gagne le match contre " + t2.Name);
+				ResultMatch += t1.Name + " gagne le match contre " + t2.Name;
                 StillAlive = t1;
 				t1.NbWin++;
 				t2.NbLose++;
 			} else if (i == j) {
-                Console.WriteLine("Egalité entre " + t1.Name + " et " + t2.Name);
+				ResultMatch += "Egalité entre " + t1.Name + " et " + t2.Name;
 				t1.NbDraw++;
 				t2.NbDraw++;
 			}

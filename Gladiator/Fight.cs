@@ -23,7 +23,7 @@ namespace Gladiator
 			// Affichage des équipes restantes
 			foreach (Team t in stillAlive)
 			{
-				Console.WriteLine("winner: " + t.Name);
+				Console.WriteLine("Winner: " + t.Name);
 			}
 		}
 
@@ -48,6 +48,7 @@ namespace Gladiator
 			for (int i=0; i < p_teamsRegistered.Count-1; i += 2) {
 				Console.WriteLine("\n---------- MATCH : " + p_teamsRegistered[i].Name + " VS " + p_teamsRegistered[i+1].Name + " ----------");
 				currentMatch = new Match(p_teamsRegistered[i], p_teamsRegistered[i + 1]);
+				Console.WriteLine(currentMatch.ResultMatch);
 				if (currentMatch.StillAlive != null)
                 {
 					winners.Add(currentMatch.StillAlive);
