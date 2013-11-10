@@ -67,6 +67,7 @@ namespace Gladiator
 				t1.NbDraw++;
 				t2.NbDraw++;
 			}
+			ResultMatch += "\n";
 
 			// Reset des champions après chaque match
 			foreach (Champion c in t1.ChampList){
