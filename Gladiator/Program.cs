@@ -8,42 +8,39 @@ namespace Gladiator
     {
         public static void Main(string[] args)
         {
-            Player p1;
-            bool exitMenuLoop = false;
-            while (!exitMenuLoop)
-            {
-                PrintMenu();
-
-                string menunav = Console.ReadLine();
-                int menuint;
-                bool menubool = int.TryParse(menunav, out menuint);
-                if (menubool)
+                int exitMenuLoop = 1;
+                while (exitMenuLoop != 0)
                 {
-
-                    if (menuint > 0 & menuint < 5)
+                    PrintMenu();
+                    string menunav = Console.ReadLine();
+                    int menuint;
+                    bool menubool = int.TryParse(menunav, out menuint);
+                    if (menubool)
                     {
-                        switch (menuint)
-                        {
 
-                            case 1: p1 = new Player("Test", "Test", "tt"); break;
-                            case 2: //startq2(); break;
-                            case 3: //startq3(); break;
-                            case 4: //startq4(); break;
-                            case 5: exitMenuLoop = true; break;
+                        if (menuint > 0 & menuint < 5)
+                        {
+                            switch (menuint)
+                            {
+
+                                case 1: Player p1 = new Player("test", "test", "GG"); break;
+                                case 2: //startq2(); break;
+                                case 3: //startq3(); break;
+                                case 4: //startq4(); break;
+                                case 5: exitMenuLoop = 0; break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("\nThe selection has to be between 1 and 4, please re-enter your selection");
                         }
                     }
                     else
                     {
-                        Console.WriteLine("\nThe selection has to be between 1 and 4, please re-enter your selection");
+                        Console.WriteLine("Veuillez taper un chiffre entre 1 et 5 merci !");    //string is not an int
                     }
-                }
-                else
-                {
-                    Console.WriteLine("An error has occurred");    //string is not an int
-                }
 
-            }
-            Console.WriteLine("Joueur créé avec menu : " + p1.Name);
+                } 
 
 
 
@@ -163,38 +160,17 @@ namespace Gladiator
         }
         public static void PrintMenu()
         {
-            Console.Write("┌───┐");
-            Console.Write("│ G │");
-            Console.Write("└───┘");
-            Console.Write("┌───┐");
-            Console.Write("│ L │");
-            Console.Write("└───┘");
-            Console.Write("┌───┐");
-            Console.Write("│ A │");
-            Console.Write("└───┘");
-            Console.Write("┌───┐");
-            Console.Write("│ D │");
-            Console.Write("└───┘");
-            Console.Write("┌───┐");
-            Console.Write("│ I │");
-            Console.Write("└───┘");
-            Console.Write("┌───┐");
-            Console.Write("│ A │");
-            Console.Write("└───┘");
-            Console.Write("┌───┐");
-            Console.Write("│ T │");
-            Console.Write("└───┘");
-            Console.Write("┌───┐");
-            Console.Write("│ O │");
-            Console.Write("└───┘");
-            Console.WriteLine("┌───┐");
-            Console.WriteLine("│ R │");
-            Console.WriteLine("└───┘");
+            Console.WriteLine("    ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐   ");
+            Console.WriteLine("    │ G │ │ L │ │ A │ │ D │ │ I │ │ A │ │ T │ │ O │ │ R │   ");
+            Console.WriteLine("    └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘   ");
+            Console.WriteLine("┌──────────────────────────────────────────────────────────┐");
+            Console.WriteLine("│ o()xxx[{::::::::::::::> THE GAME! <:::::::::::::::||===@ │");
+            Console.WriteLine("└──────────────────────────────────────────────────────────┘");
 
-            Console.WriteLine("  .:[ GLADIATOR  ");
-            Console.WriteLine("");
-            Console.WriteLine("");
-            Console.WriteLine("");
+
+            /* Console.WriteLine("  .:[ GLADIATOR  ");
+             Console.WriteLine(" 	@xxxx[{::::::::::::::::::::::::::::::::::> ");*/
+            Console.WriteLine("1  "); 
             Console.WriteLine("");
             Console.WriteLine("");
         }
