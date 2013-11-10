@@ -8,9 +8,7 @@ namespace Gladiator
     {
         public static void Main(string[] args)
         {
-
-
-
+            PrintTitle();
             Player p1 = new Player("Doe", "John", "DJ");
             Player p2 = new Player("Roe", "Jane", "RJ");
             Player p3 = new Player("Save", "Nico", "BG");
@@ -125,21 +123,14 @@ namespace Gladiator
             Console.ReadKey();
 
         }
-        public static void PrintMenu()
+        public static void PrintTitle()
         {
-            Console.WriteLine("    ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐   ");
-            Console.WriteLine("    │ G │ │ L │ │ A │ │ D │ │ I │ │ A │ │ T │ │ O │ │ R │   ");
-            Console.WriteLine("    └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘   ");
-            Console.WriteLine("┌──────────────────────────────────────────────────────────┐");
-            Console.WriteLine("│ o()xxx[{::::::::::::::> THE GAME! <:::::::::::::::||===@ │");
-            Console.WriteLine("└──────────────────────────────────────────────────────────┘");
-
-
-            /* Console.WriteLine("  .:[ GLADIATOR  ");
-             Console.WriteLine(" 	@xxxx[{::::::::::::::::::::::::::::::::::> ");*/
-            Console.WriteLine("1  "); 
-            Console.WriteLine("");
-            Console.WriteLine("");
+            Console.WriteLine("   ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐   ");
+            Console.WriteLine("   │ G │ │ L │ │ A │ │ D │ │ I │ │ A │ │ T │ │ O │ │ R │   ");
+            Console.WriteLine("   └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘   ");
+            Console.WriteLine("┌─────────────────────────────────────────────────────────┐");
+            Console.WriteLine("│ o()xxx[{::::::::::::::> THE GAME <:::::::::::::::||===@ │");
+            Console.WriteLine("└─────────────────────────────────────────────────────────┘");
         }
     }
 }
