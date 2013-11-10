@@ -26,7 +26,7 @@ namespace Gladiator
 
 			int i = 0, j = 0, nbRound = 1;
 			while (t1.ChampList[2].IsAlive && t2.ChampList[2].IsAlive && i <= 3 && j <= 3) {
-				ResultMatch += "\n--- ROUND " + nbRound + " - " + t1.ChampList[i].Name + " vs " + t2.ChampList[j].Name + "\n";
+				ResultMatch += "\n--- ROUND " + nbRound + " - " + t1.ChampList[i].Name + " vs " + t2.ChampList[j].Name + "\n\n";
 				if (t1.ChampList[i].IsAlive && t2.ChampList[j].IsAlive)
 				{
 					currentRound = new Round(t1.ChampList[i], t2.ChampList[j]);
@@ -34,7 +34,7 @@ namespace Gladiator
 					nbRound++;
 				}
 				
-				ResultMatch += "- ";
+				ResultMatch += "--- ";
 				if (!t1.ChampList[i].IsAlive) {
 					ResultMatch += t2.ChampList[j].Name + " gagne le round contre " + t1.ChampList[i].Name;
 					i++;
@@ -49,7 +49,7 @@ namespace Gladiator
 				//Console.WriteLine(t1.ChampList[i].Name + " : " + t1.ChampList[i].IsAlive.ToString());
 				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
 			}
-			ResultMatch += "\n";
+			ResultMatch += "\n\n";
 			if (i > j) {
 				ResultMatch += t2.Name + " gagne le match contre " + t1.Name;
 				StillAlive = t2;
@@ -65,6 +65,7 @@ namespace Gladiator
 				t1.NbDraw++;
 				t2.NbDraw++;
 			}
+			ResultMatch += "\n";
 
 			// On rez les champions après chaque combat d'équipe
 			// -> ils recombatent dans les prochains matchs et on ne peut pas tester la dernière équipe vivante comme avant
