@@ -17,7 +17,7 @@ namespace Gladiator
 		private string _name;
 		public string Name
 		{
-			get { 
+			get {
 				if (this.IsCapture == true) {
 					return "#" + this._name + "#";
 				}
@@ -49,7 +49,7 @@ namespace Gladiator
 			get { return this._isCapture; }
 			set { this._isCapture = value; }
 		}
-		
+
 		private Random rand = new Random();
 		public Random Rand {
 			get { return this.rand; }
@@ -60,7 +60,7 @@ namespace Gladiator
 		{
 			this.Name = p_name;
 		}
-
+        // Permet de trier les équipements par priorité
 		public void sortItems(List<Equipment> p_itemList)
 		{
 			int i = 0;
@@ -76,7 +76,7 @@ namespace Gladiator
 				}
 			}
 		}
-
+        // Ajout d'un équipement
 		public void addItem(Equipment p_item)
 		{
 
@@ -88,14 +88,17 @@ namespace Gladiator
 			} else
 				Console.WriteLine(this.Name + " ne peut pas équiper " + p_item.Name + " (" + p_item.Weight + "), " + (10 - this.StuffWeight) + " points restant");
 		}
-
+        // Suppression d'un équipement
 		public void deleteItem(Equipment p_item)
 		{
 			this.StuffWeight -= p_item.Weight;
 			this.ItemList.Remove(p_item);
 			Console.WriteLine(this.Name + " jette l'équipement " + p_item.Name + ", " + (10 - this.StuffWeight) + " points restant");
 		}
-
+        // Méthode magique qui gére le déroulement d'une attaque et d'une défense, en prenant en compte :
+        // - la priorité des armes
+        // - les coefficients d'attaque et de défense des équipements
+        // - les filets et les captures
 		public string attack(Champion p_adv, int p_priority)
 		{
 			string result = null;
@@ -131,10 +134,11 @@ namespace Gladiator
 							return result;
 						}
 						result += " et touche " + p_adv.Name;
-						// Test de la défense
+						// Test de la défense retourne true si la défense est perçée
 						bool hit = p_adv.defend();
 						if (hit == true) {
 							result += " -> COUP MORTEL \n";
+                            // Le joueur attaqué est mort.
 							p_adv.IsAlive = false;
 							p_adv.IsCapture = false;
 							this.IsCapture = false;
@@ -144,7 +148,7 @@ namespace Gladiator
 					} else {
 						result += " et manque " + p_adv.Name + "\n";
 					}
-					
+
 					return result;
 				}
 			}

@@ -19,7 +19,7 @@ namespace Gladiator
 			set { this._StillALive = value; }
 		}
 
-		// MATCH
+		// Méthode gérant et créant les matchs.
 		public Match(Team t1, Team t2)
 		{
 			Round currentRound;
@@ -37,10 +37,10 @@ namespace Gladiator
 				}
 				ResultMatch += "- ";
 				// Incrémentation en fonction de IsAlive
-				if (!t1.ChampList[i].IsAlive) {
+				if (!t1.ChampList[i].IsAlive && t2.ChampList[j].IsAlive) {
 					ResultMatch += t2.ChampList[j].Name + " gagne";
 					i++;
-				} else if (!t2.ChampList[j].IsAlive) {
+				} else if (!t2.ChampList[j].IsAlive && t1.ChampList[i].IsAlive) {
 					ResultMatch += t1.ChampList[i].Name + " gagne";
 					j++;
 				} else if (!t1.ChampList[i].IsAlive && !t2.ChampList[j].IsAlive) {
@@ -51,6 +51,7 @@ namespace Gladiator
 				ResultMatch += "\n";
 			}
 			ResultMatch += "\n";
+            // Test des champions encore vivant et donne les points aux équipes
 			if (i > j) {
 				ResultMatch += t2.Name + " gagne le match contre " + t1.Name;
 				StillAlive = t2;

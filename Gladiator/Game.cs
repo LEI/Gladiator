@@ -20,33 +20,47 @@ namespace Gladiator
 				foreach (Player p in t_players) {
 					// Vérification du nombre d'équipes et du nombre de leur nombre de champions
 					if (p.TeamList.Count > 0) {
-						// Ajout de la première équipe
+						// Ajout de la première équipe avec 3 joueur
 						foreach (Team t in p.TeamList) {
 							if (t.ChampList.Count == 3) {
 								TeamsRegistered.Add(t);
 								break;
 							} else {
+								Console.ForegroundColor = ConsoleColor.Red;
 								Console.WriteLine("L'équipe " + t.Name + " doit comporter 3 gladiateurs pour être éligible");
+								Console.ResetColor();
 							}
 						}
 					} else {
+						Console.ForegroundColor = ConsoleColor.Red;
 						Console.WriteLine("Le joueur " + p.Alias + " n'a pas d'équipe");
+						Console.ResetColor();
 					}
 				}
 			} else {
+				Console.ForegroundColor = ConsoleColor.Red;
 				Console.WriteLine("Minimum 2 joueurs, le nombre total doit être une puissance de 2");
+				Console.ResetColor();
 			}
 		}
-
-		public void start()
+        // Lancement du Fight avec la liste d'équipes et affichage du gagnant
+        public void start()
 		{
 
 			Fight currentFight = new Fight(TeamsRegistered);
 
-			// Affichage des équipes restantes
+			// Affichage de l'équipes restante
 			foreach (Team t in currentFight.LstStillAlive)
 			{
-				Console.WriteLine("\n* L'équipe " + t.Name + " remporte la partie");
+				Console.ForegroundColor = ConsoleColor.Yellow;
+				Console.WriteLine("\n            @");
+				Console.WriteLine("          @:::@");
+				Console.WriteLine("       @.:/\\:/\\:.@");
+				Console.WriteLine("      ':\\@ @ @ @/:'");
+				Console.WriteLine("        [@W@W@W@]");
+				Console.WriteLine("        `\"\"\"\"\"\"\"' ");
+				Console.WriteLine("\n* L'équipe " + t.Name + " remporte le tournoi");
+				Console.ResetColor();
 			}
 		}
 	}

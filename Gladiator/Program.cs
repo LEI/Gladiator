@@ -115,22 +115,31 @@ namespace Gladiator
 
             // Modification de l'ordre des champions
             //SortList.Swap<Champion>(t1.ChampList, 1, 2);
-			
+
 			printTitle();
+			
+			System.Threading.Thread.Sleep(1000);
+
             Game newGame = new Game(p1, p2, p3, p4);
             newGame.start();
-            //Console.ReadKey();
+            Console.ReadKey();
 
         }
 
         public static void printTitle()
-        {
+		{
+
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("   ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐   ");
             Console.WriteLine("   │ G │ │ L │ │ A │ │ D │ │ I │ │ A │ │ T │ │ O │ │ R │   ");
             Console.WriteLine("   └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘ └───┘   ");
+		
+            Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine("┌─────────────────────────────────────────────────────────┐");
             Console.WriteLine("│ o()xxx[{::::::::::::::> THE GAME <:::::::::::::::||===@ │");
             Console.WriteLine("└─────────────────────────────────────────────────────────┘");
+			Console.ResetColor();
+
         }
     }
 }

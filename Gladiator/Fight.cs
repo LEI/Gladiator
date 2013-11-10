@@ -16,8 +16,6 @@ namespace Gladiator
 		{
 			sortTeams(teamsRegistered);
 			showTeams(teamsRegistered);
-			// Initialisation des matchs et affichage des équipes
-			// !!!! Tournoi ? -> générer d'autres matchs ?
 
 			// Premier match
 			LstStillAlive = initMatch(teamsRegistered);
@@ -40,15 +38,21 @@ namespace Gladiator
 					i++;
 			}
 		}
-
+        // Initialise les matchs par équipes de deux contenues dans le paramètre p_teamsRegistered
 		public List<Team> initMatch(List<Team> p_teamsRegistered)
 		{
 			List<Team> winners = new List<Team>();
 			Match currentMatch;
 			for (int i=0; i < p_teamsRegistered.Count-1; i += 2) {
+				Console.ForegroundColor = ConsoleColor.White;
 				Console.WriteLine("\n---------- MATCH : " + p_teamsRegistered[i].Name + " VS " + p_teamsRegistered[i+1].Name + " ----------");
 				currentMatch = new Match(p_teamsRegistered[i], p_teamsRegistered[i + 1]);
-                Console.WriteLine(currentMatch.ResultMatch);
+				Console.WriteLine(currentMatch.ResultMatch);
+				Console.ResetColor();
+				
+				System.Threading.Thread.Sleep(1000);
+
+                // On récupère les équipes gagnantes dans la liste winners.
 				if (currentMatch.StillAlive != null)
                 {
 					winners.Add(currentMatch.StillAlive);
@@ -57,10 +61,11 @@ namespace Gladiator
 			// Retourne la liste des équipes vivantes après la série de matchs
 			return winners;
 		}
-
+        // Méthode affichant les équipes, les champions et leurs équipements.
 		public void showTeams(List<Team> p_teamsRegistered)
 		{
 			// Affichage des équipes
+			Console.ForegroundColor = ConsoleColor.Yellow;
 			Console.WriteLine("---------- EQUIPES EN LICE ----------");
 			foreach (Team t in p_teamsRegistered) {
 				Console.WriteLine("\n" + t.Name + " (" + t.NbWin + "/" + t.NbLose + ")\n");
@@ -71,6 +76,11 @@ namespace Gladiator
 					}
 				}
 			}
+			Console.ResetColor();
+
+			
+			System.Threading.Thread.Sleep(1000);
+
 		}
 	}
 }

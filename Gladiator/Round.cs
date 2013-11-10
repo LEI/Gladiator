@@ -27,13 +27,14 @@ namespace Gladiator
 				c2.NbDraw++;
 			}
 		}
-
+        // Méthode appelée à chaque appel de round, elle retourne tous le déroulement de la joute.
+        //  Elle continue jusqu'à ce que mort s'en suive et qu'un nouveau gladiateur entre dans l'arene.
 		public string fightToDeath(Champion c1, Champion c2)
 		{
 			string result = "";
 			string attack1 = null;
 			string attack2 = null;
-
+            // Tant que les deux sont vivants.
 			while(c1.IsAlive & c2.IsAlive ) {
 				for (int priority = 5; priority >= 1 & c1.IsAlive & c2.IsAlive ; priority--) {
 					// Combat de même priorité

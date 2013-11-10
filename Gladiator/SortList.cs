@@ -5,7 +5,7 @@ namespace Gladiator
 {
 	public static class SortList
 	{
-
+        // Méthode permetant d'échanger deux éléments d'une liste.
 		public static void Swap<T>(this List<T> list, int index1, int index2)
 		{
 			T temp = list[index1];

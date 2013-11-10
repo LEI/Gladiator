@@ -32,7 +32,7 @@ namespace Gladiator
 			this.Name = p_name;
 			this.Description = p_description;
 		}
-
+        // Ajout d'un champion dans la liste.
 		public void addChampion(Champion p_champion)
 		{
 			if (this.ChampList.Count < 3)
@@ -40,7 +40,7 @@ namespace Gladiator
 			else
 				Console.WriteLine("3 gladiateurs maximum");
 		}
-
+        // Suppression d'un champion dans la liste.
 		public void deleteChampion(Champion p_champion)
 		{
 			this.ChampList.Remove(p_champion);
@@ -56,14 +56,6 @@ namespace Gladiator
 			this.ChampList[index1] = this.ChampList[index2];
 			this.ChampList[index2] = temp;
 		}*/
-
-		public void viewOrder()
-		{
-			foreach (Champion c in this.ChampList)
-			{
-				Console.WriteLine(c.Name);
-			}
-		}
 
 		protected int _nbWin = 0;
 		public int NbWin
