@@ -23,17 +23,26 @@ namespace Gladiator
 		{
 			TeamsRegistered = new List<Team>();
 			// Vérification du nombre minimum de joueur
-			if (t_players.Length > 1) {
+			if (t_players.Length > 1 && ((t_players.Length / 2)%2 == 0)) {
 				foreach (Player p in t_players) {
-					// Vérification du nombre d'équipes
-					if (p.TeamList.Count == 3) {
-						TeamsRegistered.Add(p.TeamList[0]);
+					// Vérification du nombre d'équipes et du nombre de leur nombre de champions
+					if (p.TeamList.Count > 0) {
+						foreach (Team t in p.TeamList) {
+							if (t.ChampList.Count == 3) {
+								
+								TeamsRegistered.Add(t);
+							} else {
+								Console.WriteLine("L'équipe " + t.Name + " doit comporter 3 gladiateurs");
+							}
+
+						}
 					} else {
-						Console.WriteLine("Le joueur " + p.Alias + " doit avoir 3 équipes");
+						Console.WriteLine("Le joueur " + p.Alias + " n'a pas d'équipe");
 					}
+					
 				}
 			} else {
-				Console.WriteLine("Minimum 2 joueurs");
+				Console.WriteLine("Minimum 2 joueurs, le nombre total doit être une puissance de 2");
 			}
 		}
 
