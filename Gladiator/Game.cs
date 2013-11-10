@@ -42,7 +42,7 @@ namespace Gladiator
 				foreach (Champion c in t.ChampList) {
 					name = c.Name;
 					if (c.IsAlive == false)
-						name += " ✝";
+						name += "*";
 					Console.Write(name + "\t" + t.Name + "\t" + c.NbWin + "\n");
 				}
 			}

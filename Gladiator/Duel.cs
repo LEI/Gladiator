@@ -6,20 +6,6 @@ namespace Gladiator
 	public class Duel
 	{
 
-		private Champion _champion1;
-		public Champion Champion1
-		{
-			get { return this._champion1; }
-			set { this._champion1 = value; }
-		}
-
-		private Champion _champion2;
-		public Champion Champion2
-		{
-			get { return this._champion2; }
-			set { this._champion2 = value; }
-		}
-
         private Team _lstStillALive;
         public Team StillAlive
         {
@@ -54,7 +40,7 @@ namespace Gladiator
 				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
 			}
 			if (i > j) {
-				Console.WriteLine(t2.Name + " gagne le duel contre "+ t1.Name);
+				Console.WriteLine(t2.Name + " gagne le duel contre " + t1.Name);
                 StillAlive = t2;
 				t2.NbWin++;
 				t1.NbLose++;
@@ -68,6 +54,9 @@ namespace Gladiator
 				t1.NbDraw++;
 				t2.NbDraw++;
 			}
+
+			// On rez les champions après chaque combat d'équipe
+			// -> ils recombatent dans les prochains matchs et on ne peut pas tester la dernière équipe vivante comme avant
             foreach (Champion c in t1.ChampList)
             {
                 c.IsAlive = true;

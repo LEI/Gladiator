@@ -95,6 +95,7 @@ namespace Gladiator
 			this.ItemList.Remove(p_item);
 			Console.WriteLine(this.Name + " jette l'équipement " + p_item.Name + ", " + (10 - this.StuffWeight) + " points restant");
 		}
+
 		public string attack(Champion p_adv, int p_priority)
 		{
 			string result = null;
@@ -106,10 +107,9 @@ namespace Gladiator
 			                                 select b_equipement).ToList();
 
 			foreach (Equipment e in l_lstEquiPrio) {
-                Equipment currentEquipment = e;
 				// Vérification de la priorité
-				if (currentEquipment.Priority == p_priority) {
-					
+				if (e.Priority == p_priority) {
+
 					if ( e is Net && e.Used == true) {
 						return result;
 					}
@@ -148,10 +148,6 @@ namespace Gladiator
 					}
 				}
 			}
-
-
-
-
 
 			return result;
 		}
