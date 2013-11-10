@@ -54,6 +54,9 @@ namespace Gladiator
 				t1.NbDraw++;
 				t2.NbDraw++;
 			}
+
+			// On rez les champions après chaque combat d'équipe
+			// -> ils recombatent dans les prochains matchs et on ne peut pas tester la dernière équipe vivante comme avant
             foreach (Champion c in t1.ChampList)
             {
                 c.IsAlive = true;
