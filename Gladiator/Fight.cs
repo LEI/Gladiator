@@ -9,14 +9,14 @@ namespace Gladiator
 		{
 			sortTeams(teamsRegistered);
 			showTeams(teamsRegistered);
-			// Initialisation des duels et affichage des équipes
+			// Initialisation des matchs et affichage des équipes
 			// !!!! Tournoi ? -> générer d'autres matchs ?
 
-			// Premier duel
-			List<Team> stillAlive = initDuels(teamsRegistered);
-			// Relance duel tant qu'il reste plus d'une équipe
+			// Premier match
+			List<Team> stillAlive = initMatchs(teamsRegistered);
+			// Relance match tant qu'il reste plus d'une équipe
 			while (stillAlive.Count > 1) {
-				stillAlive = initDuels(stillAlive);
+				stillAlive = initMatchs(stillAlive);
 
 			}
 
@@ -41,23 +41,23 @@ namespace Gladiator
 			}
 		}
 
-		public List<Team> initDuels(List<Team> p_teamsRegistered)
+		public List<Team> initMatch(List<Team> p_teamsRegistered)
 		{
 			List<Team> winners = new List<Team>();
-			Duel currentDuel;
+			Match currentMatch;
 			for (int i=0; i < p_teamsRegistered.Count-1; i += 2) {
 				Console.WriteLine("\n---------- MATCH : " + p_teamsRegistered[i].Name + " VS " + p_teamsRegistered[i+1].Name + " ----------");
-				currentDuel = new Duel(p_teamsRegistered[i], p_teamsRegistered[i + 1]);
-                if (currentDuel.StillAlive != null)
+				currentMatch = new Match(p_teamsRegistered[i], p_teamsRegistered[i + 1]);
+				if (currentMatch.StillAlive != null)
                 {
-                    winners.Add(currentDuel.StillAlive);
+					winners.Add(currentMatch.StillAlive);
                 }
 
 
 				// !!!!! Calculer le nombre de victoires pendant l'exécution pour afficher les vainqueurs
 				//Console.WriteLine("\n" + winner.Name + " gagne avec " + winner.NbWin + " victoires");
 			}
-			// Retourne la liste des équipes vivantes après la série de duels
+			// Retourne la liste des équipes vivantes après la série de matchs
 			return winners;
 		}
 

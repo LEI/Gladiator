@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Gladiator
 {
-	public class Duel
+	public class Match
 	{
 
         private Team _lstStillALive;
@@ -14,7 +14,7 @@ namespace Gladiator
         }
 
 		// MATCH
-		public Duel(Team t1, Team t2)
+		public Match(Team t1, Team t2)
 		{
 			Round currentRound;
 
@@ -44,12 +44,12 @@ namespace Gladiator
 				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
 			}
 			if (i > j) {
-				Console.WriteLine(t2.Name + " gagne le duel contre " + t1.Name);
+				Console.WriteLine(t2.Name + " gagne le match contre " + t1.Name);
                 StillAlive = t2;
 				t2.NbWin++;
 				t1.NbLose++;
 			} else if (i < j) {
-				Console.WriteLine(t1.Name + " gagne le duel contre " + t2.Name);
+				Console.WriteLine(t1.Name + " gagne le match contre " + t2.Name);
                 StillAlive = t1;
 				t1.NbWin++;
 				t2.NbLose++;
