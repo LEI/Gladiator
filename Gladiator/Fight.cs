@@ -45,36 +45,14 @@ namespace Gladiator
 		{
 			List<Team> winners = new List<Team>();
 			Match currentMatch;
-            //string[] currentPlayer;
 			for (int i=0; i < p_teamsRegistered.Count-1; i += 2) {
 				Console.WriteLine("\n---------- MATCH : " + p_teamsRegistered[i].Name + " VS " + p_teamsRegistered[i+1].Name + " ----------");
 				currentMatch = new Match(p_teamsRegistered[i], p_teamsRegistered[i + 1]);
-                /*currentPlayer = currentMatch.ResultMatch.Split(new string[] {"\n", "\r\n"}, StringSplitOptions.RemoveEmptyEntries);
-                foreach (string s in currentPlayer)
-                {
-                    foreach(Gladiator g in p_teamsRegistered[i])
-                    {
-
-                    }
-                    bool line = s.ToString().Substring(0, 6).Contains(p_teamsRegistered[i].Name);
-                    if (line)
-                    {
-                        Console.WriteLine("CurrentPlayer OOOOOOOOOKKKKKKK: " + currentPlayer.ToString().Substring(0, 6));
-                    }
-                    Console.WriteLine("CurrentPlayer KO: " + p_teamsRegistered[i]);
-                    Console.WriteLine("CurrentPlayer KO: " + s);
-                }*/
-
-                // Console.WriteLine("CurrentPlayer : "+ currentPlayer);
                 Console.WriteLine(currentMatch.ResultMatch);
 				if (currentMatch.StillAlive != null)
                 {
 					winners.Add(currentMatch.StillAlive);
                 }
-
-
-				// !!!!! Calculer le nombre de victoires pendant l'exécution pour afficher les vainqueurs
-				//Console.WriteLine("\n" + winner.Name + " gagne avec " + winner.NbWin + " victoires");
 			}
 			// Retourne la liste des équipes vivantes après la série de matchs
 			return winners;

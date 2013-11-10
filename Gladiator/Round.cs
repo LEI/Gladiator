@@ -15,16 +15,16 @@ namespace Gladiator
 		public Round(Champion c1, Champion c2)
 		{
 			this.Result = fightToDeath(c1,c2);
-
-			if (c1.IsAlive == false) {
-				c1.NbLose++;
+			// Mise à jour des stats
+			if (c1.IsAlive == false && c2.IsAlive == true) {
 				c2.NbWin++;
-				//Console.WriteLine(c1.Name + " est mort ");
-			}
-			if (c2.IsAlive == false) {
-				c2.NbLose++;
+				c1.NbLose++;
+			} else if (c1.IsAlive == true && c2.IsAlive == false) {
 				c1.NbWin++;
-				//Console.WriteLine(c2.Name + " est mort ");
+				c2.NbLose++;
+			} else if (c1.IsAlive == false && c2.IsAlive == false) {
+				c1.NbDraw++;
+				c2.NbDraw++;
 			}
 		}
 
@@ -39,7 +39,7 @@ namespace Gladiator
 					// Combat de même priorité
 					attack1 = c1.attack(c2, priority);	
 					attack2 = c2.attack(c1, priority);
-					// Affichage du résultat du combat
+					// Affichage du résultat du combat en couleur
 					/*if (attack1 != null) {
 						Console.ForegroundColor = ConsoleColor.Red;
 						Console.WriteLine(attack1);

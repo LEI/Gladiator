@@ -25,29 +25,30 @@ namespace Gladiator
 			Round currentRound;
 
 			int i = 0, j = 0, nbRound = 1;
+			// Tant que les derniers champions sont vivants
 			while (t1.ChampList[2].IsAlive && t2.ChampList[2].IsAlive && i <= 3 && j <= 3) {
 				ResultMatch += "\n--- ROUND " + nbRound + " - " + t1.ChampList[i].Name + " vs " + t2.ChampList[j].Name + "\n";
-				if (t1.ChampList[i].IsAlive && t2.ChampList[j].IsAlive)
-				{
+				// Si les deux champions sont vivant
+				if (t1.ChampList[i].IsAlive && t2.ChampList[j].IsAlive) {
+					// Lancement du round
 					currentRound = new Round(t1.ChampList[i], t2.ChampList[j]);
 					ResultMatch += currentRound.Result;
 					nbRound++;
 				}
-				
 				ResultMatch += "- ";
+				// Incrémentation en fonction de IsAlive
 				if (!t1.ChampList[i].IsAlive) {
-					ResultMatch += t2.ChampList[j].Name + " gagne le round contre " + t1.ChampList[i].Name;
+					ResultMatch += t2.ChampList[j].Name + " gagne";
 					i++;
 				} else if (!t2.ChampList[j].IsAlive) {
-					ResultMatch += t1.ChampList[i].Name + " gagne le round contre " + t2.ChampList[j].Name;
+					ResultMatch += t1.ChampList[i].Name + " gagne";
 					j++;
 				} else if (!t1.ChampList[i].IsAlive && !t2.ChampList[j].IsAlive) {
-					ResultMatch += "Egalité entre " + t1.ChampList[i].Name + " et " + t2.ChampList[j].Name;
+					ResultMatch += "Egalité";
+					i++;
+					j++;
 				}
-				
 				ResultMatch += "\n";
-				//Console.WriteLine(t1.ChampList[i].Name + " : " + t1.ChampList[i].IsAlive.ToString());
-				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
 			}
 			ResultMatch += "\n";
 			if (i > j) {
@@ -66,14 +67,11 @@ namespace Gladiator
 				t2.NbDraw++;
 			}
 
-			// On rez les champions après chaque combat d'équipe
-			// -> ils recombatent dans les prochains matchs et on ne peut pas tester la dernière équipe vivante comme avant
-			foreach (Champion c in t1.ChampList)
-			{
+			// Reset des champions après chaque match
+			foreach (Champion c in t1.ChampList){
 				c.IsAlive = true;
 			}
-			foreach (Champion c in t2.ChampList)
-			{
+			foreach (Champion c in t2.ChampList){
 				c.IsAlive = true;
 			}
 

@@ -8,7 +8,6 @@ namespace Gladiator
     {
         public static void Main(string[] args)
         {
-            PrintTitle();
             Player p1 = new Player("Doe", "John", "DJ");
             Player p2 = new Player("Roe", "Jane", "RJ");
             Player p3 = new Player("Save", "Nico", "BG");
@@ -30,24 +29,24 @@ namespace Gladiator
 
             p1.addTeam(t1);
             p2.addTeam(t2);
-            p3.addTeam(t3);
-            p4.addTeam(t4);
+			p3.addTeam(t3);
+			p4.addTeam(t4);
 
-            Champion c1 = new Champion("AONE");
-            Champion c2 = new Champion("ADUO");
-            Champion c3 = new Champion("ATRI");
+            Champion c1 = new Champion("Aone");
+            Champion c2 = new Champion("Aduo");
+            Champion c3 = new Champion("Atri");
 
-            Champion c4 = new Champion("BONE");
-            Champion c5 = new Champion("BDUO");
-            Champion c6 = new Champion("BTRI");
+            Champion c4 = new Champion("Bone");
+            Champion c5 = new Champion("Bduo");
+            Champion c6 = new Champion("Btri");
 
-            Champion c7 = new Champion("CONE");
-            Champion c8 = new Champion("CDUO");
-            Champion c9 = new Champion("CTRI");
+            Champion c7 = new Champion("Cone");
+            Champion c8 = new Champion("Cduo");
+            Champion c9 = new Champion("Ctri");
 
-            Champion c10 = new Champion("DONE");
-            Champion c11 = new Champion("DUOD");
-            Champion c12 = new Champion("DTRI");
+            Champion c10 = new Champion("Done");
+            Champion c11 = new Champion("Duod");
+            Champion c12 = new Champion("Dtri");
 
             t1.addChampion(c1);
             t1.addChampion(c2);
@@ -57,8 +56,8 @@ namespace Gladiator
             t2.addChampion(c5);
             t2.addChampion(c6);
 
-            t3.addChampion(c7);
-            t3.addChampion(c8);
+			t3.addChampion(c7);
+			t3.addChampion(c8);
             t3.addChampion(c9);
 
             t4.addChampion(c10);
@@ -116,14 +115,15 @@ namespace Gladiator
 
             // Modification de l'ordre des champions
             //SortList.Swap<Champion>(t1.ChampList, 1, 2);
-
+			
+			printTitle();
             Game newGame = new Game(p1, p2, p3, p4);
             newGame.start();
-            Console.WriteLine("FIN");
-            Console.ReadKey();
+            //Console.ReadKey();
 
         }
-        public static void PrintTitle()
+
+        public static void printTitle()
         {
             Console.WriteLine("   ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐ ┌───┐   ");
             Console.WriteLine("   │ G │ │ L │ │ A │ │ D │ │ I │ │ A │ │ T │ │ O │ │ R │   ");

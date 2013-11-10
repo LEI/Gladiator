@@ -136,16 +136,16 @@ namespace Gladiator
 						if (hit == true) {
 							result += " -> COUP MORTEL \n";
 							p_adv.IsAlive = false;
+							p_adv.IsCapture = false;
 							this.IsCapture = false;
-                            return result;
 						} else {
 							result += " -> PARADE \n";
-                            return result;
 						}
 					} else {
 						result += " et manque " + p_adv.Name + "\n";
-                        return result;
 					}
+					
+					return result;
 				}
 			}
 

@@ -38,7 +38,7 @@ namespace Gladiator
 			if (this.ChampList.Count < 3)
 				this.ChampList.Add(p_champion);
 			else
-				throw new Exception("3 gladiateurs maximum");
+				Console.WriteLine("3 gladiateurs maximum");
 		}
 
 		public void deleteChampion(Champion p_champion)

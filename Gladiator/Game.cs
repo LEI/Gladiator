@@ -5,13 +5,6 @@ namespace Gladiator
 {
 	public class Game
 	{
-		/*private string _result;
-		public string Result
-		{
-			get { return this._result; }
-			set { this._result = value; }
-		}*/
-
 		private List<Team> _teamsRegistered;
 		public List<Team> TeamsRegistered
 		{
@@ -22,16 +15,18 @@ namespace Gladiator
 		public Game(params Player[] t_players)
 		{
 			TeamsRegistered = new List<Team>();
-			// Vérification du nombre minimum de joueur
+			// Vérification du nombre de joueur
 			if (t_players.Length > 1 && ((t_players.Length / 2)%2 == 0)) {
 				foreach (Player p in t_players) {
 					// Vérification du nombre d'équipes et du nombre de leur nombre de champions
 					if (p.TeamList.Count > 0) {
+						// Ajout de la première équipe
 						foreach (Team t in p.TeamList) {
 							if (t.ChampList.Count == 3) {
 								TeamsRegistered.Add(t);
+								break;
 							} else {
-								Console.WriteLine("L'équipe " + t.Name + " doit comporter 3 gladiateurs");
+								Console.WriteLine("L'équipe " + t.Name + " doit comporter 3 gladiateurs pour être éligible");
 							}
 						}
 					} else {
@@ -51,7 +46,7 @@ namespace Gladiator
 			// Affichage des équipes restantes
 			foreach (Team t in currentFight.LstStillAlive)
 			{
-				Console.WriteLine("Winner: " + t.Name);
+				Console.WriteLine("\n* L'équipe " + t.Name + " remporte la partie");
 			}
 		}
 	}
