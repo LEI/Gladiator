@@ -5,12 +5,12 @@ namespace Gladiator
 {
 	public class Game
 	{
-		private string _result;
+		/*private string _result;
 		public string Result
 		{
 			get { return this._result; }
 			set { this._result = value; }
-		}
+		}*/
 
 		private List<Team> _teamsRegistered;
 		public List<Team> TeamsRegistered
@@ -29,17 +29,14 @@ namespace Gladiator
 					if (p.TeamList.Count > 0) {
 						foreach (Team t in p.TeamList) {
 							if (t.ChampList.Count == 3) {
-								
 								TeamsRegistered.Add(t);
 							} else {
 								Console.WriteLine("L'équipe " + t.Name + " doit comporter 3 gladiateurs");
 							}
-
 						}
 					} else {
 						Console.WriteLine("Le joueur " + p.Alias + " n'a pas d'équipe");
 					}
-					
 				}
 			} else {
 				Console.WriteLine("Minimum 2 joueurs, le nombre total doit être une puissance de 2");

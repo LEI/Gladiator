@@ -34,7 +34,7 @@ namespace Gladiator
 					nbRound++;
 				}
 				
-				ResultMatch += "--- ";
+				ResultMatch += "- ";
 				if (!t1.ChampList[i].IsAlive) {
 					ResultMatch += t2.ChampList[j].Name + " gagne le round contre " + t1.ChampList[i].Name;
 					i++;
