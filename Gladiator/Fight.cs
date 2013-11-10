@@ -5,6 +5,13 @@ namespace Gladiator
 {
 	public class Fight
 	{
+		private List<Team> _lstStillALive;
+		public List<Team> LstStillAlive
+		{
+			get { return this._lstStillALive; }
+			set { this._lstStillALive = value; }
+		}
+
 		public Fight(List<Team> teamsRegistered)
 		{
 			sortTeams(teamsRegistered);
@@ -13,17 +20,10 @@ namespace Gladiator
 			// !!!! Tournoi ? -> générer d'autres matchs ?
 
 			// Premier match
-			List<Team> stillAlive = initMatch(teamsRegistered);
+			LstStillAlive = initMatch(teamsRegistered);
 			// Relance match tant qu'il reste plus d'une équipe
-			while (stillAlive.Count > 1) {
-				stillAlive = initMatch(stillAlive);
-
-			}
-
-			// Affichage des équipes restantes
-			foreach (Team t in stillAlive)
-			{
-				Console.WriteLine("Winner: " + t.Name);
+			while (LstStillAlive.Count > 1) {
+				LstStillAlive = initMatch(LstStillAlive);
 			}
 		}
 
@@ -83,7 +83,7 @@ namespace Gladiator
 		public void showTeams(List<Team> p_teamsRegistered)
 		{
 			// Affichage des équipes
-			Console.WriteLine("----- EQUIPES EN LICE -----");
+			Console.WriteLine("---------- EQUIPES EN LICE ----------");
 			foreach (Team t in p_teamsRegistered) {
 				Console.WriteLine("\n" + t.Name + " (" + t.NbWin + "/" + t.NbLose + ")\n");
 				foreach (Champion c in t.ChampList) {
