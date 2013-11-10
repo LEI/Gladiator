@@ -47,13 +47,15 @@ namespace Gladiator
 
 		}
 
-		public void swapChampion(int index1, int index2)
+		// Utiliser la méthode statique :
+		// SortList.Swap<Champion>(t1.ChampList, 1, 2);
+		/*public void swapChampion(int index1, int index2)
 		{
 			// SWAP
 			Champion temp = this.ChampList[index1];
 			this.ChampList[index1] = this.ChampList[index2];
 			this.ChampList[index2] = temp;
-		}
+		}*/
 
 		public void viewOrder()
 		{
@@ -94,12 +96,7 @@ namespace Gladiator
 
 		public int NbTotal()
 		{
-			return (this.NbWin + this.NbLose);
-		}
-
-		public int NbCurrent()
-		{
-			return (this.NbWin + this.NbLose);
+			return (this.NbWin + this.NbLose + this.NbDraw);
 		}
 	}
 }

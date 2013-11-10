@@ -95,6 +95,7 @@ namespace Gladiator
 			this.ItemList.Remove(p_item);
 			Console.WriteLine(this.Name + " jette l'équipement " + p_item.Name + ", " + (10 - this.StuffWeight) + " points restant");
 		}
+
 		public string attack(Champion p_adv, int p_priority)
 		{
 			string result = null;

@@ -1,24 +1,27 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Fight.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Champion.cs">
     <Files>
-      <File FileName="Gladiator/Program.cs" Line="100" Column="22" />
-      <File FileName="Gladiator/Game.cs" Line="17" Column="38" />
-      <File FileName="Gladiator/Fight.cs" Line="37" Column="7" />
-      <File FileName="Gladiator/Duel.cs" Line="38" Column="17" />
-      <File FileName="Gladiator/Round.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Champion.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Program.cs" Line="3" Column="28" />
+      <File FileName="Gladiator/Game.cs" Line="33" Column="20" />
+      <File FileName="Gladiator/Fight.cs" Line="64" Column="24" />
+      <File FileName="Gladiator/Duel.cs" Line="10" Column="31" />
+      <File FileName="Gladiator/Round.cs" Line="24" Column="34" />
+      <File FileName="Gladiator/Champion.cs" Line="98" Column="3" />
       <File FileName="Gladiator/Player.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Team.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Team.cs" Line="100" Column="4" />
       <File FileName="Gladiator/Equipment.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Equipments/Trident.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Equipments/Trident.cs" Line="14" Column="32" />
+      <File FileName="Gladiator/Equipments/Net.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Interfaces/IStats.cs" Line="8" Column="13" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State expanded="True">
           <Node name="Gladiator" expanded="True">
             <Node name="Equipments" expanded="True" />
-            <Node name="Fight.cs" selected="True" />
+            <Node name="Interfaces" expanded="True" />
+            <Node name="Champion.cs" selected="True" />
           </Node>
         </State>
       </Pad>
