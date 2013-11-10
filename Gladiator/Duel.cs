@@ -13,14 +13,18 @@ namespace Gladiator
             set { this._lstStillALive = value; }
         }
 
+		// MATCH
 		public Duel(Team t1, Team t2)
 		{
+			Round currentRound;
+
 			int i = 0, j = 0, nbRound = 1;
 			while (t1.ChampList[2].IsAlive && t2.ChampList[2].IsAlive && i <= 3 && j <= 3) {
 				Console.WriteLine("\n----- ROUND " + nbRound + " - " + t1.ChampList[i].Name + " vs " + t2.ChampList[j].Name + " -----\n");
                 if (t1.ChampList[i].IsAlive && t2.ChampList[j].IsAlive)
                 {
-                    new Round(t1.ChampList[i], t2.ChampList[j]);
+					currentRound = new Round(t1.ChampList[i], t2.ChampList[j]);
+					Console.WriteLine(currentRound.Result);
                     nbRound++;
                 }
                 else if (!t1.ChampList[i].IsAlive )

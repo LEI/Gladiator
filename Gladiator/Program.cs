@@ -8,7 +8,7 @@ namespace Gladiator
     {
         public static void Main(string[] args)
         {
-            Player p1;
+            /*Player p1;
             bool exitMenuLoop = false;
             while (!exitMenuLoop)
             {
@@ -43,12 +43,12 @@ namespace Gladiator
                 }
 
             }
-            Console.WriteLine("Joueur créé avec menu : " + p1.Name);
+            Console.WriteLine("Joueur créé avec menu : " + p1.Name);*/
 
 
 
-            //Player p1 = new Player("Doe", "John", "DJ");
-            /*Player p2 = new Player("Roe", "Jane", "RJ");
+            Player p1 = new Player("Doe", "John", "DJ");
+            Player p2 = new Player("Roe", "Jane", "RJ");
             Player p3 = new Player("Save", "Nico", "BG");
             Player p4 = new Player("NRV", "Gui", "LEI");
 
@@ -156,7 +156,7 @@ namespace Gladiator
             //SortList.Swap<Champion>(t1.ChampList, 1, 2);
 
             Game newGame = new Game(p1, p2, p3, p4);
-            newGame.start();*/
+            newGame.start();
             Console.WriteLine("FIN");
             Console.ReadKey();
 
