@@ -45,11 +45,11 @@ namespace Gladiator
 		{
 			List<Team> winners = new List<Team>();
 			Match currentMatch;
-            string[] currentPlayer;
+            //string[] currentPlayer;
 			for (int i=0; i < p_teamsRegistered.Count-1; i += 2) {
 				Console.WriteLine("\n---------- MATCH : " + p_teamsRegistered[i].Name + " VS " + p_teamsRegistered[i+1].Name + " ----------");
 				currentMatch = new Match(p_teamsRegistered[i], p_teamsRegistered[i + 1]);
-                currentPlayer = currentMatch.ResultMatch.Split(new string[] {"\n", "\r\n"}, StringSplitOptions.RemoveEmptyEntries);
+                /*currentPlayer = currentMatch.ResultMatch.Split(new string[] {"\n", "\r\n"}, StringSplitOptions.RemoveEmptyEntries);
                 foreach (string s in currentPlayer)
                 {
                     foreach(Gladiator g in p_teamsRegistered[i])
@@ -63,9 +63,9 @@ namespace Gladiator
                     }
                     Console.WriteLine("CurrentPlayer KO: " + p_teamsRegistered[i]);
                     Console.WriteLine("CurrentPlayer KO: " + s);
-                }
+                }*/
 
-               // Console.WriteLine("CurrentPlayer : "+ currentPlayer);
+                // Console.WriteLine("CurrentPlayer : "+ currentPlayer);
                 Console.WriteLine(currentMatch.ResultMatch);
 				if (currentMatch.StillAlive != null)
                 {

@@ -26,10 +26,10 @@ namespace Gladiator
 			if (t_players.Length > 1) {
 				foreach (Player p in t_players) {
 					// Vérification du nombre d'équipes
-					if (p.TeamList.Count > 0) {
+					if (p.TeamList.Count == 3) {
 						TeamsRegistered.Add(p.TeamList[0]);
 					} else {
-						Console.WriteLine("Le joueur " + p.Alias + " n'a aucune d'équipe");
+						Console.WriteLine("Le joueur " + p.Alias + " doit avoir 3 équipes");
 					}
 				}
 			} else {
