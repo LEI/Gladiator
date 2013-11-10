@@ -128,11 +128,9 @@ namespace Gladiator
 						if (e is Net) {
 							p_adv.IsCapture = true;
 							result += " et capture " + p_adv.Name + "\n";
-                            p_adv.IsAlive = true;
 							return result;
 						}
 						result += " et touche " + p_adv.Name;
-                        p_adv.IsAlive = true;
 						// Test de la défense
 						bool hit = p_adv.defend();
 						if (hit == true) {
@@ -142,12 +140,10 @@ namespace Gladiator
                             return result;
 						} else {
 							result += " -> PARADE \n";
-                            p_adv.IsAlive = true;
                             return result;
 						}
 					} else {
 						result += " et manque " + p_adv.Name + "\n";
-                        p_adv.IsAlive = true;
                         return result;
 					}
 				}
