@@ -13,10 +13,10 @@ namespace Gladiator
 			// !!!! Tournoi ? -> générer d'autres matchs ?
 
 			// Premier match
-			List<Team> stillAlive = initMatchs(teamsRegistered);
+			List<Team> stillAlive = initMatch(teamsRegistered);
 			// Relance match tant qu'il reste plus d'une équipe
 			while (stillAlive.Count > 1) {
-				stillAlive = initMatchs(stillAlive);
+				stillAlive = initMatch(stillAlive);
 
 			}
 
