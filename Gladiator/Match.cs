@@ -27,14 +27,6 @@ namespace Gladiator
 					Console.WriteLine(currentRound.Result);
                     nbRound++;
                 }
-                else if (!t1.ChampList[i].IsAlive )
-                { 
-                    Console.WriteLine(t1.ChampList[i].Name + " est déjà mort !");
-                }
-                else if (!t2.ChampList[j].IsAlive)
-                {
-                    Console.WriteLine(t2.ChampList[j].Name + " est déjà mort !");
-                }
 				
                 if (!t1.ChampList[i].IsAlive)
                     i++;

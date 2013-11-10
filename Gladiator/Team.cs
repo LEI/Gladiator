@@ -89,7 +89,7 @@ namespace Gladiator
 		public double ratio()
 		{
 			if (this.NbTotal() != 0) {
-				return (this.NbWin * 100 / (this.NbLose + this.NbWin));
+				return (this.NbWin * 100 / this.NbTotal());
 			} else
 				return 0;
 		}

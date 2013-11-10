@@ -14,9 +14,10 @@ namespace Gladiator
 
 		public Game(params Player[] t_players)
 		{
+
 			TeamsRegistered = new List<Team>();
 			// Vérification du nombre minimum de joueur
-			if (t_players.Length > 1) {
+			if ((t_players.Length / 2) %  2 == 0 ) {
 				foreach (Player p in t_players) {
 					// Vérification du nombre d'équipes
 					if (p.TeamList.Count > 0) {
@@ -26,7 +27,7 @@ namespace Gladiator
 					}
 				}
 			} else {
-				throw new Exception("Minimum 2 joueurs");
+				throw new Exception("Pour jouer en tournoi il faut un nombre d'équipe valant une puissance de deux. (2, 4, 8, 16...");
 			}
 		}
 
