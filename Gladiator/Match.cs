@@ -49,7 +49,7 @@ namespace Gladiator
 				//Console.WriteLine(t1.ChampList[i].Name + " : " + t1.ChampList[i].IsAlive.ToString());
 				//Console.WriteLine(t2.ChampList[j].Name + " : " + t2.ChampList[j].IsAlive.ToString());
 			}
-			ResultMatch += "\n\n";
+			ResultMatch += "\n";
 			if (i > j) {
 				ResultMatch += t2.Name + " gagne le match contre " + t1.Name;
 				StillAlive = t2;
@@ -65,7 +65,6 @@ namespace Gladiator
 				t1.NbDraw++;
 				t2.NbDraw++;
 			}
-			ResultMatch += "\n";
 
 			// On rez les champions après chaque combat d'équipe
 			// -> ils recombatent dans les prochains matchs et on ne peut pas tester la dernière équipe vivante comme avant
