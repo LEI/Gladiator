@@ -65,7 +65,7 @@ namespace Gladiator
 		public void showTeams(List<Team> p_teamsRegistered)
 		{
 			// Affichage des équipes
-			Console.WriteLine("----- EQUIPES EN LICE -----");
+			Console.WriteLine("---------- EQUIPES EN LICE ----------");
 			foreach (Team t in p_teamsRegistered) {
 				Console.WriteLine("\n" + t.Name + " (" + t.NbWin + "/" + t.NbLose + ")\n");
 				foreach (Champion c in t.ChampList) {

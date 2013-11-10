@@ -30,7 +30,7 @@ namespace Gladiator
 
             p1.addTeam(t1);
             p2.addTeam(t2);
-            //p3.addTeam(t3);
+            p3.addTeam(t3);
             p4.addTeam(t4);
 
             Champion c1 = new Champion("AONE");
