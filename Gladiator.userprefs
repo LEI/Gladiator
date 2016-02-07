@@ -2,17 +2,17 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Gladiator/Match.cs">
     <Files>
-      <File FileName="Gladiator/Program.cs" Line="128" Column="48" />
-      <File FileName="Gladiator/Game.cs" Line="35" Column="50" />
-      <File FileName="Gladiator/Fight.cs" Line="23" Column="37" />
-      <File FileName="Gladiator/Match.cs" Line="46" Column="71" />
-      <File FileName="Gladiator/Round.cs" Line="37" Column="37" />
-      <File FileName="Gladiator/Champion.cs" Line="133" Column="44" />
-      <File FileName="Gladiator/Player.cs" Line="68" Column="56" />
-      <File FileName="Gladiator/Team.cs" Line="51" Column="19" />
+      <File FileName="Gladiator/Program.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Game.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Fight.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Match.cs" Line="52" Column="5" />
+      <File FileName="Gladiator/Round.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Champion.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Player.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Team.cs" Line="1" Column="1" />
       <File FileName="Gladiator/Equipment.cs" Line="1" Column="1" />
-      <File FileName="Gladiator/Interfaces/IStats.cs" Line="8" Column="13" />
-      <File FileName="Gladiator/Equipments/Trident.cs" Line="14" Column="34" />
+      <File FileName="Gladiator/Interfaces/IStats.cs" Line="1" Column="1" />
+      <File FileName="Gladiator/Equipments/Trident.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
